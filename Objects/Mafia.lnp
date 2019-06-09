@@ -1,0 +1,13 @@
+--cpu Cortex-M3
+".\objects\startup_lpc17xx.o"
+".\objects\system_lpc17xx.o"
+".\objects\lpc17xx_exti.o"
+".\objects\lpc17xx_gpio.o"
+".\objects\lpc17xx_pinsel.o"
+".\objects\lpc1768_utility.o"
+".\objects\core_cm3.o"
+".\objects\main.o"
+".\objects\glcd.o"
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Mafia.map" -o .\Objects\Mafia.axf
