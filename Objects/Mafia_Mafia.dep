@@ -1,6 +1,6 @@
 Dependencies for Project 'Mafia', Target 'Mafia': (DO NOT MODIFY !)
-F (.\startup_LPC17xx.s)(0x5C9112BD)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Mafia-IC:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.5.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 526" --pd "LPC175x_6x SETA 1"--list .\listings\startup_lpc17xx.lst --xref -o .\objects\startup_lpc17xx.o --depend .\objects\startup_lpc17xx.d)
-F (.\system_LPC17xx.c)(0x5C9112BD)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Lib\Drivers\include -I .\Lib\Core\Device\NXP\LPC17xx\Include-I.\RTE\_Mafia-IC:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.5.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DLPC175x_6x-o .\objects\system_lpc17xx.o --omf_browse .\objects\system_lpc17xx.crf --depend .\objects\system_lpc17xx.d)
+F (.\startup_LPC17xx\startup_LPC17xx.s)(0x5CFD6672)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Mafia-IC:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.5.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 526" --pd "LPC175x_6x SETA 1"--list .\listings\startup_lpc17xx.lst --xref -o .\objects\startup_lpc17xx.o --depend .\objects\startup_lpc17xx.d)
+F (.\startup_LPC17xx\system_LPC17xx.c)(0x5CFD6672)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Lib\Drivers\include -I .\Lib\Core\Device\NXP\LPC17xx\Include-I.\RTE\_Mafia-IC:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.5.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DLPC175x_6x-o .\objects\system_lpc17xx.o --omf_browse .\objects\system_lpc17xx.crf --depend .\objects\system_lpc17xx.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
 I (.\Lib\Core\Device\NXP\LPC17xx\Include\LPC17xx.h)(0x5C9112F7)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x559CDD8A)
@@ -52,7 +52,22 @@ I (.\Lib\Drivers\include\lpc17xx_exti.h)(0x5C9112F8)
 I (.\Lib\Drivers\include\lpc17xx_uart.h)(0x5C9112F8)
 F (.\core_cm3.c)(0x5C9112B9)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Lib\Drivers\include -I .\Lib\Core\Device\NXP\LPC17xx\Include-I.\RTE\_Mafia-IC:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.5.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DLPC175x_6x-o .\objects\core_cm3.o --omf_browse .\objects\core_cm3.crf --depend .\objects\core_cm3.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-F (.\main.c)(0x5CFD59E3)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Lib\Drivers\include -I .\Lib\Core\Device\NXP\LPC17xx\Include-I.\RTE\_Mafia-IC:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.5.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DLPC175x_6x-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x5CFD6817)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Lib\Drivers\include -I .\Lib\Core\Device\NXP\LPC17xx\Include-I.\RTE\_Mafia-IC:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.5.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DLPC175x_6x-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\Lib\Core\Device\NXP\LPC17xx\Include\LPC17xx.H)(0x5C9112F7)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x559CDD8A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x559CDD8A)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x559CDD8A)
+I (.\Lib\Core\Device\NXP\LPC17xx\Include\system_LPC17xx.h)(0x5C9112F7)
+I (.\Lib\Drivers\include\Keypad.H)(0x5C9112BA)
+I (.\Lib\Drivers\include\GLCD.h)(0x5CFD6672)
+I (.\Lib\Drivers\include\LPC1768_utility.h)(0x5C9112F8)
+I (.\Lib\Drivers\include\lpc17xx_gpio.h)(0x5C9112F8)
+I (.\Lib\Drivers\include\lpc_types.h)(0x5C9112F8)
+I (.\Lib\Drivers\include\LPC1768_Huins.h)(0x5C9112F8)
+I (.\Lib\Drivers\include\lpc17xx_pinsel.h)(0x5C9112F8)
+I (.\Lib\Drivers\include\lpc17xx_exti.h)(0x5C9112F8)
+I (.\Lib\Drivers\include\lpc17xx_uart.h)(0x5C9112F8)
 F (.\GLCD.c)(0x5CFD3273)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Lib\Drivers\include -I .\Lib\Core\Device\NXP\LPC17xx\Include-I.\RTE\_Mafia-IC:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.5.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DLPC175x_6x-o .\objects\glcd.o --omf_browse .\objects\glcd.crf --depend .\objects\glcd.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
@@ -62,5 +77,5 @@ I (C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x559CDD8A)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x559CDD8A)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x559CDD8A)
 I (.\Lib\Core\Device\NXP\LPC17xx\Include\system_LPC17xx.h)(0x5C9112F7)
-I (GLCD.h)(0x5C9112BC)
-I (font.h)(0x5C9112BC)
+I (.\Lib\Drivers\include\GLCD.h)(0x5CFD6672)
+I (.\Lib\Drivers\include\font.h)(0x5CFD6672)

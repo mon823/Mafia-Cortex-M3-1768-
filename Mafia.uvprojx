@@ -385,12 +385,12 @@
             <File>
               <FileName>startup_LPC17xx.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\startup_LPC17xx.s</FilePath>
+              <FilePath>.\startup_LPC17xx\startup_LPC17xx.s</FilePath>
             </File>
             <File>
               <FileName>system_LPC17xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\system_LPC17xx.c</FilePath>
+              <FilePath>.\startup_LPC17xx\system_LPC17xx.c</FilePath>
             </File>
           </Files>
         </Group>

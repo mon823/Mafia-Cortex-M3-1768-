@@ -1,1 +1,17 @@
 .\objects\main.o: main.c
+.\objects\main.o: .\Lib\Core\Device\NXP\LPC17xx\Include\LPC17xx.H
+.\objects\main.o: C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h
+.\objects\main.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h
+.\objects\main.o: .\Lib\Core\Device\NXP\LPC17xx\Include\system_LPC17xx.h
+.\objects\main.o: .\Lib\Drivers\include\Keypad.H
+.\objects\main.o: .\Lib\Drivers\include\GLCD.h
+.\objects\main.o: .\Lib\Drivers\include\LPC1768_utility.h
+.\objects\main.o: .\Lib\Drivers\include\lpc17xx_gpio.h
+.\objects\main.o: .\Lib\Drivers\include\lpc_types.h
+.\objects\main.o: .\Lib\Drivers\include\LPC1768_Huins.h
+.\objects\main.o: .\Lib\Drivers\include\lpc17xx_pinsel.h
+.\objects\main.o: .\Lib\Drivers\include\lpc17xx_exti.h
+.\objects\main.o: .\Lib\Drivers\include\lpc17xx_uart.h
+.\objects\main.o: .\Lib\Drivers\include\LPC1768_Huins.h

@@ -7,5 +7,5 @@
 .\objects\glcd.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h
 .\objects\glcd.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h
 .\objects\glcd.o: .\Lib\Core\Device\NXP\LPC17xx\Include\system_LPC17xx.h
-.\objects\glcd.o: GLCD.h
-.\objects\glcd.o: font.h
+.\objects\glcd.o: .\Lib\Drivers\include\GLCD.h
+.\objects\glcd.o: .\Lib\Drivers\include\font.h
