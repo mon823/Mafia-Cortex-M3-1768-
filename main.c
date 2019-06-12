@@ -361,6 +361,8 @@ void select_pass(int tmp){
 void init(){
 	players_Info();
 	Delay(SEC_2);
+	keypad();
+	Delay(SEC_2);
 	select_pass(0);
 	startday();
 }

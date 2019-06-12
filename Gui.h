@@ -52,6 +52,23 @@ void players_Info() {
 	GLCD_displayStringLn(Line9, "-*-*-*-*-*-*-*-*-*-*");
 }
 
+
+void keypad() {
+	GLCD_clear(Black);
+	GLCD_setBackColor(Black);
+	GLCD_setTextColor(White);
+	GLCD_displayStringLn(Line0, "*-*-*-*-*-*-*-*-*-*-");
+	GLCD_displayStringLn(Line1, "-                  *");
+	GLCD_displayStringLn(Line2, "*  [] [1] [2] [3]  -");
+	GLCD_displayStringLn(Line3, "-                  *");
+	GLCD_displayStringLn(Line4, "*  [] [4] [5] [6]  -");
+	GLCD_displayStringLn(Line5, "-                  *");
+	GLCD_displayStringLn(Line6, "*  [] [7] [8] [9]  -");
+	GLCD_displayStringLn(Line7, "-                  *");
+	GLCD_displayStringLn(Line8, "*  [] [B] [0]  []  -");
+	GLCD_displayStringLn(Line9, "-*-*-*-*-*-*-*-*-*-*");
+}
+
 void player_Id(int tmp) {
 	GLCD_clear(Black);
 	
