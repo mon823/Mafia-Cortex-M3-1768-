@@ -15,3 +15,11 @@
 .\objects\main.o: .\Lib\Drivers\include\lpc17xx_exti.h
 .\objects\main.o: .\Lib\Drivers\include\lpc17xx_uart.h
 .\objects\main.o: .\Lib\Drivers\include\LPC1768_Huins.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\main.o: .\Lib\Drivers\include\lpc17xx_timer.h
+.\objects\main.o: Gui.h
+.\objects\main.o: .\Lib\Drivers\include\LPC1768_utility.h
+.\objects\main.o: .\Lib\Drivers\include\LPC1768_Huins.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\main.o: .\Lib\Drivers\include\LPC1768_fnd.h
+.\objects\main.o: .\Lib\Drivers\include\LPC1768_Huins.h

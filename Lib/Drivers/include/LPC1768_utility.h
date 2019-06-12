@@ -19,6 +19,7 @@
 #define SEC_1 	SystemCoreClock/4  
 #define SEC_2 	SystemCoreClock/2
 #define SEC_4 	SystemCoreClock
+#define SEC_5   SystemCoreClock/8
 
 void Delay(unsigned long d_t);
 void Led_Init(uint8_t Led);
