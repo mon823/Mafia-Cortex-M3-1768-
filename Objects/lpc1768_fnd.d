@@ -1,0 +1,15 @@
+.\objects\lpc1768_fnd.o: Lib\Drivers\source\LPC1768_fnd.c
+.\objects\lpc1768_fnd.o: .\Lib\Drivers\include\LPC1768_fnd.h
+.\objects\lpc1768_fnd.o: .\Lib\Drivers\include\lpc17xx_gpio.h
+.\objects\lpc1768_fnd.o: .\Lib\Core\Device\NXP\LPC17xx\Include\LPC17xx.h
+.\objects\lpc1768_fnd.o: C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h
+.\objects\lpc1768_fnd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lpc1768_fnd.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h
+.\objects\lpc1768_fnd.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h
+.\objects\lpc1768_fnd.o: .\Lib\Core\Device\NXP\LPC17xx\Include\system_LPC17xx.h
+.\objects\lpc1768_fnd.o: .\Lib\Drivers\include\lpc_types.h
+.\objects\lpc1768_fnd.o: .\Lib\Drivers\include\LPC1768_Huins.h
+.\objects\lpc1768_fnd.o: .\Lib\Drivers\include\lpc17xx_pinsel.h
+.\objects\lpc1768_fnd.o: .\Lib\Drivers\include\lpc17xx_exti.h
+.\objects\lpc1768_fnd.o: .\Lib\Drivers\include\lpc17xx_uart.h
+.\objects\lpc1768_fnd.o: .\Lib\Drivers\include\LPC1768_Huins.h

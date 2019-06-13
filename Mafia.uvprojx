@@ -417,6 +417,26 @@
               <FileType>1</FileType>
               <FilePath>.\Lib\Drivers\source\LPC1768_utility.c</FilePath>
             </File>
+            <File>
+              <FileName>lpc17xx_clkpwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\Drivers\source\lpc17xx_clkpwr.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_libcfg_default.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\Drivers\source\lpc17xx_libcfg_default.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\Drivers\source\lpc17xx_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>LPC1768_fnd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\Drivers\source\LPC1768_fnd.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

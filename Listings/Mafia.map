@@ -9,6 +9,7 @@ Section Cross References
     startup_lpc17xx.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(STACK) for __initial_sp
     startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(.text) for Reset_Handler
+    startup_lpc17xx.o(RESET) refers to main.o(i.TIMER0_IRQHandler) for TIMER0_IRQHandler
     startup_lpc17xx.o(RESET) refers to main.o(i.EINT0_IRQHandler) for EINT0_IRQHandler
     startup_lpc17xx.o(.ARM.__at_0x02FC) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_lpc17xx.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
@@ -56,8 +57,48 @@ Section Cross References
     lpc1768_utility.o(i.Led_Toggle) refers to lpc1768_utility.o(i.Led_On) for Led_On
     lpc1768_utility.o(i.Led_Toggle) refers to lpc1768_utility.o(i.Led_Off) for Led_Off
     lpc1768_utility.o(i.Led_Toggle) refers to lpc1768_utility.o(.data) for ledStatus1
+    lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK) refers to lpc17xx_clkpwr.o(i.CLKPWR_GetPCLKSEL) for CLKPWR_GetPCLKSEL
+    lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK) refers to system_lpc17xx.o(.data) for SystemCoreClock
+    lpc17xx_timer.o(i.TIM_ClearIntCapturePending) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_ClearIntPending) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_Cmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_ConfigCapture) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_ConfigMatch) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_DeInit) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_DeInit) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_timer.o(i.TIM_GetCaptureValue) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_GetIntCaptureStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_GetIntStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_Init) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_Init) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_timer.o(i.TIM_Init) refers to lpc17xx_clkpwr.o(i.CLKPWR_SetPCLKDiv) for CLKPWR_SetPCLKDiv
+    lpc17xx_timer.o(i.TIM_Init) refers to lpc17xx_timer.o(i.converPtrToTimeNum) for converPtrToTimeNum
+    lpc17xx_timer.o(i.TIM_Init) refers to lpc17xx_timer.o(i.converUSecToVal) for converUSecToVal
+    lpc17xx_timer.o(i.TIM_ResetCounter) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_UpdateMatchValue) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.converUSecToVal) refers to lpc17xx_timer.o(i.getPClock) for getPClock
+    lpc17xx_timer.o(i.converUSecToVal) refers to lludivv7m.o(.text) for __aeabi_uldivmod
+    lpc17xx_timer.o(i.getPClock) refers to lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK) for CLKPWR_GetPCLK
+    lpc1768_fnd.o(i.FND_COM_DATA_Select) refers to lpc1768_fnd.o(i.FND_COM_Select) for FND_COM_Select
+    lpc1768_fnd.o(i.FND_COM_DATA_Select) refers to lpc1768_fnd.o(i.FND_DATA_Select) for FND_DATA_Select
+    lpc1768_fnd.o(i.FND_COM_Init) refers to lpc17xx_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    lpc1768_fnd.o(i.FND_COM_Select) refers to lpc1768_fnd.o(i.FND_COM_Init) for FND_COM_Init
+    lpc1768_fnd.o(i.FND_COM_Select) refers to lpc17xx_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    lpc1768_fnd.o(i.FND_COM_Select) refers to lpc1768_fnd.o(i.FND_COM_CS) for FND_COM_CS
+    lpc1768_fnd.o(i.FND_DATA_Select) refers to lpc1768_fnd.o(i.FND_Data_Reset) for FND_Data_Reset
+    lpc1768_fnd.o(i.FND_DATA_Select) refers to lpc17xx_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    lpc1768_fnd.o(i.FND_DATA_Select) refers to lpc1768_fnd.o(i.FND_Data_CS) for FND_Data_CS
+    lpc1768_fnd.o(i.FND_Data_CS) refers to lpc17xx_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    lpc1768_fnd.o(i.FND_Data_CS) refers to lpc17xx_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    lpc1768_fnd.o(i.FND_Data_Reset) refers to lpc17xx_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    lpc1768_fnd.o(i.FND_Data_Reset) refers to lpc1768_fnd.o(i.FND_Data_CS) for FND_Data_CS
+    lpc1768_fnd.o(i.FND_Init) refers to lpc17xx_gpio.o(i.GPIO_SetDir) for GPIO_SetDir
     main.o(i.EINT0_IRQHandler) refers to lpc17xx_exti.o(i.EXTI_ClearEXTIFlag) for EXTI_ClearEXTIFlag
+    main.o(i.EINT0_IRQHandler) refers to rand.o(.text) for srand
+    main.o(i.EINT0_IRQHandler) refers to rand.o(.emb_text) for rand
     main.o(i.EINT0_IRQHandler) refers to main.o(i.init) for init
+    main.o(i.EINT0_IRQHandler) refers to main.o(.data) for time_tmp
+    main.o(i.EINT0_IRQHandler) refers to main.o(.bss) for userjob
     main.o(i.Keypad) refers to main.o(i.EXT_IO_A_CS) for EXT_IO_A_CS
     main.o(i.Keypad) refers to main.o(i.EXT_IO_B_CS) for EXT_IO_B_CS
     main.o(i.Keypad) refers to main.o(i.EXT_IO_C_CS) for EXT_IO_C_CS
@@ -71,6 +112,10 @@ Section Cross References
     main.o(i.Keypad_Output_Row_3) refers to main.o(i.Keypad_DIR_Output) for Keypad_DIR_Output
     main.o(i.Keypad_Output_Row_4) refers to main.o(i.Keypad_DIR_Output) for Keypad_DIR_Output
     main.o(i.Start_Page) refers to main.o(i.start_Screen) for start_Screen
+    main.o(i.TIMER0_Config) refers to main.o(.data) for TIM_ConfigStruct
+    main.o(i.TIMER0_Config) refers to main.o(.bss) for TIM_MatchConfigStruct
+    main.o(i.TIMER0_IRQHandler) refers to lpc17xx_timer.o(i.TIM_ClearIntPending) for TIM_ClearIntPending
+    main.o(i.TIMER0_IRQHandler) refers to main.o(.data) for time_tmp
     main.o(i.WinCitizens) refers to main.o(i.citizen_Win) for citizen_Win
     main.o(i.checkUser) refers to main.o(i.select_Player) for select_Player
     main.o(i.checkUser) refers to main.o(i.Keypad) for Keypad
@@ -114,6 +159,7 @@ Section Cross References
     main.o(i.findUser) refers to main.o(i.police) for police
     main.o(i.findUser) refers to main.o(i.Keypad) for Keypad
     main.o(i.findUser) refers to lpc1768_utility.o(i.Delay) for Delay
+    main.o(i.findUser) refers to main.o(i.fix_doctor) for fix_doctor
     main.o(i.findUser) refers to main.o(i.po_Result) for po_Result
     main.o(i.findUser) refers to system_lpc17xx.o(.data) for SystemCoreClock
     main.o(i.findUser) refers to main.o(.bss) for userjob
@@ -165,18 +211,23 @@ Section Cross References
     main.o(i.mafia) refers to glcd.o(i.GLCD_setBackColor) for GLCD_setBackColor
     main.o(i.mafia) refers to glcd.o(i.GLCD_setTextColor) for GLCD_setTextColor
     main.o(i.mafia) refers to glcd.o(i.GLCD_displayStringLn) for GLCD_displayStringLn
+    main.o(i.main) refers to lpc1768_fnd.o(i.FND_Init) for FND_Init
     main.o(i.main) refers to system_lpc17xx.o(i.SystemInit) for SystemInit
     main.o(i.main) refers to glcd.o(i.GLCD_init) for GLCD_init
     main.o(i.main) refers to glcd.o(i.GLCD_clear) for GLCD_clear
     main.o(i.main) refers to main.o(i.EXT_IO_init) for EXT_IO_init
     main.o(i.main) refers to main.o(i.Keypad_DIR_Input) for Keypad_DIR_Input
-    main.o(i.main) refers to rand.o(.text) for srand
     main.o(i.main) refers to lpc17xx_exti.o(i.EXTI_Init) for EXTI_Init
     main.o(i.main) refers to lpc17xx_pinsel.o(i.AF_ConfigPin) for AF_ConfigPin
     main.o(i.main) refers to lpc17xx_exti.o(i.EXTI_ConfigPin) for EXTI_ConfigPin
-    main.o(i.main) refers to rand.o(.emb_text) for rand
+    main.o(i.main) refers to main.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    main.o(i.main) refers to main.o(i.TIMER0_Config) for TIMER0_Config
+    main.o(i.main) refers to lpc17xx_timer.o(i.TIM_Init) for TIM_Init
+    main.o(i.main) refers to lpc17xx_timer.o(i.TIM_ConfigMatch) for TIM_ConfigMatch
+    main.o(i.main) refers to lpc17xx_timer.o(i.TIM_Cmd) for TIM_Cmd
     main.o(i.main) refers to main.o(i.Start_Page) for Start_Page
-    main.o(i.main) refers to main.o(.bss) for userjob
+    main.o(i.main) refers to main.o(.data) for TIM_ConfigStruct
+    main.o(i.main) refers to main.o(.bss) for TIM_MatchConfigStruct
     main.o(i.marfia_Win) refers to glcd.o(i.GLCD_clear) for GLCD_clear
     main.o(i.marfia_Win) refers to glcd.o(i.GLCD_setBackColor) for GLCD_setBackColor
     main.o(i.marfia_Win) refers to glcd.o(i.GLCD_setTextColor) for GLCD_setTextColor
@@ -221,6 +272,8 @@ Section Cross References
     main.o(i.select_pass) refers to main.o(i.findJob) for findJob
     main.o(i.select_pass) refers to system_lpc17xx.o(.data) for SystemCoreClock
     main.o(i.select_pass) refers to main.o(.bss) for userpass
+    main.o(i.showFnd) refers to glcd.o(i.GLCD_displayStringLn) for GLCD_displayStringLn
+    main.o(i.showFnd) refers to main.o(.data) for time_1s
     main.o(i.star) refers to glcd.o(i.GLCD_displayStringLn) for GLCD_displayStringLn
     main.o(i.star_pass) refers to glcd.o(i.GLCD_displayStringLn) for GLCD_displayStringLn
     main.o(i.start_Screen) refers to glcd.o(i.GLCD_clear) for GLCD_clear
@@ -432,10 +485,8 @@ Removing Unused input sections from the image.
     Removing lpc17xx_gpio.o(i.GPIO_ClearInt), (32 bytes).
     Removing lpc17xx_gpio.o(i.GPIO_ClearValue), (20 bytes).
     Removing lpc17xx_gpio.o(i.GPIO_GetIntStatus), (88 bytes).
-    Removing lpc17xx_gpio.o(i.GPIO_GetPointer), (56 bytes).
     Removing lpc17xx_gpio.o(i.GPIO_IntCmd), (64 bytes).
     Removing lpc17xx_gpio.o(i.GPIO_ReadValue), (22 bytes).
-    Removing lpc17xx_gpio.o(i.GPIO_SetDir), (40 bytes).
     Removing lpc17xx_gpio.o(i.GPIO_SetValue), (20 bytes).
     Removing lpc17xx_pinsel.o(.rev16_text), (4 bytes).
     Removing lpc17xx_pinsel.o(.revsh_text), (4 bytes).
@@ -450,9 +501,36 @@ Removing Unused input sections from the image.
     Removing lpc1768_utility.o(i.Led_On), (132 bytes).
     Removing lpc1768_utility.o(i.Led_Toggle), (332 bytes).
     Removing lpc1768_utility.o(.data), (8 bytes).
+    Removing lpc17xx_clkpwr.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_clkpwr.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_clkpwr.o(i.CLKPWR_DeepPowerDown), (24 bytes).
+    Removing lpc17xx_clkpwr.o(i.CLKPWR_DeepSleep), (24 bytes).
+    Removing lpc17xx_clkpwr.o(i.CLKPWR_PowerDown), (24 bytes).
+    Removing lpc17xx_clkpwr.o(i.CLKPWR_Sleep), (16 bytes).
+    Removing lpc17xx_timer.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_timer.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_timer.o(i.TIM_ClearIntCapturePending), (132 bytes).
+    Removing lpc17xx_timer.o(i.TIM_ConfigCapture), (172 bytes).
+    Removing lpc17xx_timer.o(i.TIM_ConfigStructInit), (22 bytes).
+    Removing lpc17xx_timer.o(i.TIM_DeInit), (160 bytes).
+    Removing lpc17xx_timer.o(i.TIM_GetCaptureValue), (120 bytes).
+    Removing lpc17xx_timer.o(i.TIM_GetIntCaptureStatus), (144 bytes).
+    Removing lpc17xx_timer.o(i.TIM_GetIntStatus), (140 bytes).
+    Removing lpc17xx_timer.o(i.TIM_ResetCounter), (108 bytes).
+    Removing lpc17xx_timer.o(i.TIM_UpdateMatchValue), (132 bytes).
+    Removing lpc1768_fnd.o(.rev16_text), (4 bytes).
+    Removing lpc1768_fnd.o(.revsh_text), (4 bytes).
+    Removing lpc1768_fnd.o(i.FND_COM_CS), (28 bytes).
+    Removing lpc1768_fnd.o(i.FND_COM_DATA_Select), (20 bytes).
+    Removing lpc1768_fnd.o(i.FND_COM_Init), (84 bytes).
+    Removing lpc1768_fnd.o(i.FND_COM_Select), (130 bytes).
+    Removing lpc1768_fnd.o(i.FND_DATA_Select), (394 bytes).
+    Removing lpc1768_fnd.o(i.FND_Data_CS), (20 bytes).
+    Removing lpc1768_fnd.o(i.FND_Data_Reset), (88 bytes).
     Removing core_cm3.o(.emb_text), (32 bytes).
     Removing main.o(.rev16_text), (4 bytes).
     Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(i.showFnd), (100 bytes).
     Removing main.o(i.test), (132 bytes).
     Removing glcd.o(.rev16_text), (4 bytes).
     Removing glcd.o(.revsh_text), (4 bytes).
@@ -460,7 +538,7 @@ Removing Unused input sections from the image.
     Removing glcd.o(i.GLCD_clearLn), (40 bytes).
     Removing glcd.o(i.GLCD_putPixel), (44 bytes).
 
-58 unused section(s) (total 2852 bytes) removed from the image.
+83 unused section(s) (total 4862 bytes) removed from the image.
 
 ==============================================================================
 
@@ -471,21 +549,21 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     RESET                                    0x00000000   Section      204  startup_lpc17xx.o(RESET)
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
     ../clib/angel/dclz77c.s                  0x00000000   Number         0  __dclz77c.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0_sigfpe.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0_sigfpe.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
@@ -501,44 +579,51 @@ Image Symbol Table
     ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
     ../clib/longlong.s                       0x00000000   Number         0  lludivv7m.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
     ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  rand.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  rand.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
-    ../clib/stdlib.c                         0x00000000   Number         0  rand.o ABSOLUTE
-    ../clib/stdlib.c                         0x00000000   Number         0  rand.o ABSOLUTE
     ../clib/string.c                         0x00000000   Number         0  strcpy.o ABSOLUTE
     ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
     GLCD.c                                   0x00000000   Number         0  glcd.o ABSOLUTE
     GLCD.c                                   0x00000000   Number         0  glcd.o ABSOLUTE
+    Lib\Drivers\source\LPC1768_fnd.c         0x00000000   Number         0  lpc1768_fnd.o ABSOLUTE
     Lib\Drivers\source\LPC1768_utility.c     0x00000000   Number         0  lpc1768_utility.o ABSOLUTE
+    Lib\Drivers\source\lpc17xx_clkpwr.c      0x00000000   Number         0  lpc17xx_clkpwr.o ABSOLUTE
     Lib\Drivers\source\lpc17xx_exti.c        0x00000000   Number         0  lpc17xx_exti.o ABSOLUTE
     Lib\Drivers\source\lpc17xx_gpio.c        0x00000000   Number         0  lpc17xx_gpio.o ABSOLUTE
+    Lib\Drivers\source\lpc17xx_libcfg_default.c 0x00000000   Number         0  lpc17xx_libcfg_default.o ABSOLUTE
     Lib\Drivers\source\lpc17xx_pinsel.c      0x00000000   Number         0  lpc17xx_pinsel.o ABSOLUTE
+    Lib\Drivers\source\lpc17xx_timer.c       0x00000000   Number         0  lpc17xx_timer.o ABSOLUTE
+    Lib\\Drivers\\source\\LPC1768_fnd.c      0x00000000   Number         0  lpc1768_fnd.o ABSOLUTE
     Lib\\Drivers\\source\\LPC1768_utility.c  0x00000000   Number         0  lpc1768_utility.o ABSOLUTE
+    Lib\\Drivers\\source\\lpc17xx_clkpwr.c   0x00000000   Number         0  lpc17xx_clkpwr.o ABSOLUTE
     Lib\\Drivers\\source\\lpc17xx_exti.c     0x00000000   Number         0  lpc17xx_exti.o ABSOLUTE
     Lib\\Drivers\\source\\lpc17xx_gpio.c     0x00000000   Number         0  lpc17xx_gpio.o ABSOLUTE
     Lib\\Drivers\\source\\lpc17xx_pinsel.c   0x00000000   Number         0  lpc17xx_pinsel.o ABSOLUTE
+    Lib\\Drivers\\source\\lpc17xx_timer.c    0x00000000   Number         0  lpc17xx_timer.o ABSOLUTE
     core_cm3.c                               0x00000000   Number         0  core_cm3.o ABSOLUTE
     core_cm3.c                               0x00000000   Number         0  core_cm3.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
@@ -602,111 +687,135 @@ Image Symbol Table
     .text                                    0x000002f8   Section        2  use_no_semi.o(.text)
     .text                                    0x000002fa   Section        0  indicate_semi.o(.text)
     .ARM.__at_0x02FC                         0x000002fc   Section        4  startup_lpc17xx.o(.ARM.__at_0x02FC)
-    .text                                    0x00000300   Section      100  rt_memcpy_w.o(.text)
-    .text                                    0x00000364   Section        0  exit.o(.text)
-    .text                                    0x00000378   Section        8  libspace.o(.text)
-    .text                                    0x00000380   Section        0  sys_exit.o(.text)
-    i.AF_ConfigPin                           0x0000038c   Section        0  lpc17xx_pinsel.o(i.AF_ConfigPin)
-    i.Delay                                  0x000003aa   Section        0  lpc1768_utility.o(i.Delay)
-    i.EINT0_IRQHandler                       0x000003b6   Section        0  main.o(i.EINT0_IRQHandler)
-    i.EXTI_ClearEXTIFlag                     0x000003c4   Section        0  lpc17xx_exti.o(i.EXTI_ClearEXTIFlag)
-    i.EXTI_Config                            0x000003d4   Section        0  lpc17xx_exti.o(i.EXTI_Config)
-    i.EXTI_ConfigPin                         0x000003f4   Section        0  lpc17xx_exti.o(i.EXTI_ConfigPin)
-    i.EXTI_Init                              0x00000418   Section        0  lpc17xx_exti.o(i.EXTI_Init)
-    i.EXTI_SetMode                           0x00000434   Section        0  lpc17xx_exti.o(i.EXTI_SetMode)
-    i.EXTI_SetPolarity                       0x00000468   Section        0  lpc17xx_exti.o(i.EXTI_SetPolarity)
-    i.EXT_IO_A_CS                            0x0000049c   Section        0  main.o(i.EXT_IO_A_CS)
-    i.EXT_IO_B_CS                            0x000004c4   Section        0  main.o(i.EXT_IO_B_CS)
-    i.EXT_IO_C_CS                            0x000004ec   Section        0  main.o(i.EXT_IO_C_CS)
-    i.EXT_IO_init                            0x00000514   Section        0  main.o(i.EXT_IO_init)
-    i.GLCD_SetX                              0x00000540   Section        0  glcd.o(i.GLCD_SetX)
-    GLCD_SetX                                0x00000541   Thumb Code    50  glcd.o(i.GLCD_SetX)
-    i.GLCD_SetY                              0x00000572   Section        0  glcd.o(i.GLCD_SetY)
-    GLCD_SetY                                0x00000573   Thumb Code    50  glcd.o(i.GLCD_SetY)
-    i.GLCD_clear                             0x000005a4   Section        0  glcd.o(i.GLCD_clear)
-    i.GLCD_displayChar                       0x000005d4   Section        0  glcd.o(i.GLCD_displayChar)
-    i.GLCD_displayStringLn                   0x000005fc   Section        0  glcd.o(i.GLCD_displayStringLn)
-    i.GLCD_drawChar                          0x00000638   Section        0  glcd.o(i.GLCD_drawChar)
-    i.GLCD_init                              0x0000069c   Section        0  glcd.o(i.GLCD_init)
-    i.GLCD_setBackColor                      0x00000970   Section        0  glcd.o(i.GLCD_setBackColor)
-    i.GLCD_setTextColor                      0x0000097c   Section        0  glcd.o(i.GLCD_setTextColor)
-    i.Keypad                                 0x00000988   Section        0  main.o(i.Keypad)
-    i.Keypad_DIR_Input                       0x00000a9c   Section        0  main.o(i.Keypad_DIR_Input)
-    i.Keypad_DIR_Output                      0x00000ad8   Section        0  main.o(i.Keypad_DIR_Output)
-    i.Keypad_Input                           0x00000b08   Section        0  main.o(i.Keypad_Input)
-    i.Keypad_Output_Row_1                    0x00000b7c   Section        0  main.o(i.Keypad_Output_Row_1)
-    i.Keypad_Output_Row_2                    0x00000bc8   Section        0  main.o(i.Keypad_Output_Row_2)
-    i.Keypad_Output_Row_3                    0x00000c14   Section        0  main.o(i.Keypad_Output_Row_3)
-    i.Keypad_Output_Row_4                    0x00000c60   Section        0  main.o(i.Keypad_Output_Row_4)
-    i.PINSEL_ConfigPin                       0x00000cac   Section        0  lpc17xx_pinsel.o(i.PINSEL_ConfigPin)
-    i.Start_Page                             0x00000cd0   Section        0  main.o(i.Start_Page)
-    i.SystemInit                             0x00000cd4   Section        0  system_lpc17xx.o(i.SystemInit)
-    i.WinCitizens                            0x00000e10   Section        0  main.o(i.WinCitizens)
-    i.checkUser                              0x00000e14   Section        0  main.o(i.checkUser)
-    i.citizen_Win                            0x00000edc   Section        0  main.o(i.citizen_Win)
-    i.day_one                                0x00000fbc   Section        0  main.o(i.day_one)
-    i.day_two                                0x0000103c   Section        0  main.o(i.day_two)
-    i.delay                                  0x00001104   Section        0  glcd.o(i.delay)
-    delay                                    0x00001105   Thumb Code    14  glcd.o(i.delay)
-    i.doctor                                 0x00001114   Section        0  main.o(i.doctor)
-    i.endDay                                 0x000011e4   Section        0  main.o(i.endDay)
-    i.findJob                                0x0000121c   Section        0  main.o(i.findJob)
-    i.findUser                               0x0000122c   Section        0  main.o(i.findUser)
-    i.findpass                               0x00001280   Section        0  main.o(i.findpass)
-    i.fix_No_num                             0x00001344   Section        0  main.o(i.fix_No_num)
-    i.fix_Yes_num                            0x00001398   Section        0  main.o(i.fix_Yes_num)
-    i.fix_doctor                             0x000013ec   Section        0  main.o(i.fix_doctor)
-    i.fix_player_num                         0x00001428   Section        0  main.o(i.fix_player_num)
-    i.fix_select_player                      0x00001470   Section        0  main.o(i.fix_select_player)
-    i.healUser                               0x000014ac   Section        0  main.o(i.healUser)
-    i.init                                   0x000014f8   Section        0  main.o(i.init)
-    i.isFin                                  0x00001528   Section        0  main.o(i.isFin)
-    i.keypad                                 0x00001564   Section        0  main.o(i.keypad)
-    i.killcitizens                           0x00001674   Section        0  main.o(i.killcitizens)
-    i.mafia                                  0x000016bc   Section        0  main.o(i.mafia)
-    i.main                                   0x0000178c   Section        0  main.o(i.main)
-    i.marfia_Win                             0x00001824   Section        0  main.o(i.marfia_Win)
-    i.player_Id                              0x00001904   Section        0  main.o(i.player_Id)
-    i.player_Job                             0x000019c8   Section        0  main.o(i.player_Job)
-    i.players_Info                           0x00001b6c   Section        0  main.o(i.players_Info)
-    i.po_Result                              0x00001cac   Section        0  main.o(i.po_Result)
-    i.police                                 0x00001dc0   Section        0  main.o(i.police)
-    i.select_Player                          0x00001e90   Section        0  main.o(i.select_Player)
-    i.select_pass                            0x00001f30   Section        0  main.o(i.select_pass)
-    i.set_OpenDrainMode                      0x00001ffc   Section        0  lpc17xx_pinsel.o(i.set_OpenDrainMode)
-    set_OpenDrainMode                        0x00001ffd   Thumb Code    42  lpc17xx_pinsel.o(i.set_OpenDrainMode)
-    i.set_PinFunc                            0x0000202c   Section        0  lpc17xx_pinsel.o(i.set_PinFunc)
-    set_PinFunc                              0x0000202d   Thumb Code    60  lpc17xx_pinsel.o(i.set_PinFunc)
-    i.set_ResistorMode                       0x0000206c   Section        0  lpc17xx_pinsel.o(i.set_ResistorMode)
-    set_ResistorMode                         0x0000206d   Thumb Code    60  lpc17xx_pinsel.o(i.set_ResistorMode)
-    i.ssp_send                               0x000020ac   Section        0  glcd.o(i.ssp_send)
-    ssp_send                                 0x000020ad   Thumb Code    32  glcd.o(i.ssp_send)
-    i.star                                   0x000020d0   Section        0  main.o(i.star)
-    i.star_pass                              0x0000216c   Section        0  main.o(i.star_pass)
-    i.start_Screen                           0x0000222c   Section        0  main.o(i.start_Screen)
-    i.startday                               0x00002338   Section        0  main.o(i.startday)
-    i.vote                                   0x0000234c   Section        0  main.o(i.vote)
-    i.vote_screen                            0x00002434   Section        0  main.o(i.vote_screen)
-    i.winMafia                               0x000024f4   Section        0  main.o(i.winMafia)
-    i.wr_cmd                                 0x000024f8   Section        0  glcd.o(i.wr_cmd)
-    wr_cmd                                   0x000024f9   Thumb Code    36  glcd.o(i.wr_cmd)
-    i.wr_dat                                 0x00002520   Section        0  glcd.o(i.wr_dat)
-    wr_dat                                   0x00002521   Thumb Code    38  glcd.o(i.wr_dat)
-    i.wr_pixel                               0x0000254c   Section        0  glcd.o(i.wr_pixel)
-    wr_pixel                                 0x0000254d   Thumb Code    50  glcd.o(i.wr_pixel)
+    .text                                    0x00000300   Section      238  lludivv7m.o(.text)
+    .text                                    0x000003ee   Section      100  rt_memcpy_w.o(.text)
+    .text                                    0x00000452   Section        0  exit.o(.text)
+    .text                                    0x00000464   Section        8  libspace.o(.text)
+    .text                                    0x0000046c   Section        0  sys_exit.o(.text)
+    i.AF_ConfigPin                           0x00000478   Section        0  lpc17xx_pinsel.o(i.AF_ConfigPin)
+    i.CLKPWR_ConfigPPWR                      0x00000498   Section        0  lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR)
+    i.CLKPWR_GetPCLK                         0x000004d0   Section        0  lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK)
+    i.CLKPWR_GetPCLKSEL                      0x00000510   Section        0  lpc17xx_clkpwr.o(i.CLKPWR_GetPCLKSEL)
+    i.CLKPWR_SetPCLKDiv                      0x00000538   Section        0  lpc17xx_clkpwr.o(i.CLKPWR_SetPCLKDiv)
+    i.Delay                                  0x000005a0   Section        0  lpc1768_utility.o(i.Delay)
+    i.EINT0_IRQHandler                       0x000005ac   Section        0  main.o(i.EINT0_IRQHandler)
+    i.EXTI_ClearEXTIFlag                     0x00000618   Section        0  lpc17xx_exti.o(i.EXTI_ClearEXTIFlag)
+    i.EXTI_Config                            0x00000628   Section        0  lpc17xx_exti.o(i.EXTI_Config)
+    i.EXTI_ConfigPin                         0x00000648   Section        0  lpc17xx_exti.o(i.EXTI_ConfigPin)
+    i.EXTI_Init                              0x0000066c   Section        0  lpc17xx_exti.o(i.EXTI_Init)
+    i.EXTI_SetMode                           0x00000688   Section        0  lpc17xx_exti.o(i.EXTI_SetMode)
+    i.EXTI_SetPolarity                       0x000006bc   Section        0  lpc17xx_exti.o(i.EXTI_SetPolarity)
+    i.EXT_IO_A_CS                            0x000006f0   Section        0  main.o(i.EXT_IO_A_CS)
+    i.EXT_IO_B_CS                            0x00000718   Section        0  main.o(i.EXT_IO_B_CS)
+    i.EXT_IO_C_CS                            0x00000740   Section        0  main.o(i.EXT_IO_C_CS)
+    i.EXT_IO_init                            0x00000768   Section        0  main.o(i.EXT_IO_init)
+    i.FND_Init                               0x00000794   Section        0  lpc1768_fnd.o(i.FND_Init)
+    i.GLCD_SetX                              0x000007c8   Section        0  glcd.o(i.GLCD_SetX)
+    GLCD_SetX                                0x000007c9   Thumb Code    50  glcd.o(i.GLCD_SetX)
+    i.GLCD_SetY                              0x000007fa   Section        0  glcd.o(i.GLCD_SetY)
+    GLCD_SetY                                0x000007fb   Thumb Code    50  glcd.o(i.GLCD_SetY)
+    i.GLCD_clear                             0x0000082c   Section        0  glcd.o(i.GLCD_clear)
+    i.GLCD_displayChar                       0x0000085c   Section        0  glcd.o(i.GLCD_displayChar)
+    i.GLCD_displayStringLn                   0x00000884   Section        0  glcd.o(i.GLCD_displayStringLn)
+    i.GLCD_drawChar                          0x000008c0   Section        0  glcd.o(i.GLCD_drawChar)
+    i.GLCD_init                              0x00000924   Section        0  glcd.o(i.GLCD_init)
+    i.GLCD_setBackColor                      0x00000bf8   Section        0  glcd.o(i.GLCD_setBackColor)
+    i.GLCD_setTextColor                      0x00000c04   Section        0  glcd.o(i.GLCD_setTextColor)
+    i.GPIO_GetPointer                        0x00000c10   Section        0  lpc17xx_gpio.o(i.GPIO_GetPointer)
+    GPIO_GetPointer                          0x00000c11   Thumb Code    52  lpc17xx_gpio.o(i.GPIO_GetPointer)
+    i.GPIO_SetDir                            0x00000c48   Section        0  lpc17xx_gpio.o(i.GPIO_SetDir)
+    i.Keypad                                 0x00000c70   Section        0  main.o(i.Keypad)
+    i.Keypad_DIR_Input                       0x00000d84   Section        0  main.o(i.Keypad_DIR_Input)
+    i.Keypad_DIR_Output                      0x00000dc0   Section        0  main.o(i.Keypad_DIR_Output)
+    i.Keypad_Input                           0x00000df0   Section        0  main.o(i.Keypad_Input)
+    i.Keypad_Output_Row_1                    0x00000e64   Section        0  main.o(i.Keypad_Output_Row_1)
+    i.Keypad_Output_Row_2                    0x00000eb0   Section        0  main.o(i.Keypad_Output_Row_2)
+    i.Keypad_Output_Row_3                    0x00000efc   Section        0  main.o(i.Keypad_Output_Row_3)
+    i.Keypad_Output_Row_4                    0x00000f48   Section        0  main.o(i.Keypad_Output_Row_4)
+    i.NVIC_EnableIRQ                         0x00000f94   Section        0  main.o(i.NVIC_EnableIRQ)
+    NVIC_EnableIRQ                           0x00000f95   Thumb Code    22  main.o(i.NVIC_EnableIRQ)
+    i.PINSEL_ConfigPin                       0x00000faa   Section        0  lpc17xx_pinsel.o(i.PINSEL_ConfigPin)
+    i.Start_Page                             0x00000fce   Section        0  main.o(i.Start_Page)
+    i.SystemInit                             0x00000fd4   Section        0  system_lpc17xx.o(i.SystemInit)
+    i.TIMER0_Config                          0x00001110   Section        0  main.o(i.TIMER0_Config)
+    i.TIMER0_IRQHandler                      0x0000113c   Section        0  main.o(i.TIMER0_IRQHandler)
+    i.TIM_ClearIntPending                    0x000011b4   Section        0  lpc17xx_timer.o(i.TIM_ClearIntPending)
+    i.TIM_Cmd                                0x00001234   Section        0  lpc17xx_timer.o(i.TIM_Cmd)
+    i.TIM_ConfigMatch                        0x000012a8   Section        0  lpc17xx_timer.o(i.TIM_ConfigMatch)
+    i.TIM_Init                               0x000013d0   Section        0  lpc17xx_timer.o(i.TIM_Init)
+    i.WinCitizens                            0x00001510   Section        0  main.o(i.WinCitizens)
+    i.checkUser                              0x00001514   Section        0  main.o(i.checkUser)
+    i.check_failed                           0x000015dc   Section        0  lpc17xx_libcfg_default.o(i.check_failed)
+    i.citizen_Win                            0x000015e0   Section        0  main.o(i.citizen_Win)
+    i.converPtrToTimeNum                     0x000016c0   Section        0  lpc17xx_timer.o(i.converPtrToTimeNum)
+    converPtrToTimeNum                       0x000016c1   Thumb Code    46  lpc17xx_timer.o(i.converPtrToTimeNum)
+    i.converUSecToVal                        0x000016fc   Section        0  lpc17xx_timer.o(i.converUSecToVal)
+    converUSecToVal                          0x000016fd   Thumb Code    50  lpc17xx_timer.o(i.converUSecToVal)
+    i.day_one                                0x00001734   Section        0  main.o(i.day_one)
+    i.day_two                                0x000017b4   Section        0  main.o(i.day_two)
+    i.delay                                  0x00001890   Section        0  glcd.o(i.delay)
+    delay                                    0x00001891   Thumb Code    14  glcd.o(i.delay)
+    i.doctor                                 0x000018a0   Section        0  main.o(i.doctor)
+    i.endDay                                 0x00001970   Section        0  main.o(i.endDay)
+    i.findJob                                0x000019ac   Section        0  main.o(i.findJob)
+    i.findUser                               0x000019bc   Section        0  main.o(i.findUser)
+    i.findpass                               0x00001a18   Section        0  main.o(i.findpass)
+    i.fix_No_num                             0x00001adc   Section        0  main.o(i.fix_No_num)
+    i.fix_Yes_num                            0x00001b30   Section        0  main.o(i.fix_Yes_num)
+    i.fix_doctor                             0x00001b84   Section        0  main.o(i.fix_doctor)
+    i.fix_player_num                         0x00001bc0   Section        0  main.o(i.fix_player_num)
+    i.fix_select_player                      0x00001c08   Section        0  main.o(i.fix_select_player)
+    i.getPClock                              0x00001c44   Section        0  lpc17xx_timer.o(i.getPClock)
+    getPClock                                0x00001c45   Thumb Code    66  lpc17xx_timer.o(i.getPClock)
+    i.healUser                               0x00001c88   Section        0  main.o(i.healUser)
+    i.init                                   0x00001cd4   Section        0  main.o(i.init)
+    i.isFin                                  0x00001d04   Section        0  main.o(i.isFin)
+    i.keypad                                 0x00001d40   Section        0  main.o(i.keypad)
+    i.killcitizens                           0x00001e50   Section        0  main.o(i.killcitizens)
+    i.mafia                                  0x00001e98   Section        0  main.o(i.mafia)
+    i.main                                   0x00001f68   Section        0  main.o(i.main)
+    i.marfia_Win                             0x00001fd4   Section        0  main.o(i.marfia_Win)
+    i.player_Id                              0x000020b4   Section        0  main.o(i.player_Id)
+    i.player_Job                             0x00002178   Section        0  main.o(i.player_Job)
+    i.players_Info                           0x0000231c   Section        0  main.o(i.players_Info)
+    i.po_Result                              0x0000245c   Section        0  main.o(i.po_Result)
+    i.police                                 0x00002570   Section        0  main.o(i.police)
+    i.select_Player                          0x00002640   Section        0  main.o(i.select_Player)
+    i.select_pass                            0x000026e0   Section        0  main.o(i.select_pass)
+    i.set_OpenDrainMode                      0x000027ac   Section        0  lpc17xx_pinsel.o(i.set_OpenDrainMode)
+    set_OpenDrainMode                        0x000027ad   Thumb Code    42  lpc17xx_pinsel.o(i.set_OpenDrainMode)
+    i.set_PinFunc                            0x000027dc   Section        0  lpc17xx_pinsel.o(i.set_PinFunc)
+    set_PinFunc                              0x000027dd   Thumb Code    60  lpc17xx_pinsel.o(i.set_PinFunc)
+    i.set_ResistorMode                       0x0000281c   Section        0  lpc17xx_pinsel.o(i.set_ResistorMode)
+    set_ResistorMode                         0x0000281d   Thumb Code    60  lpc17xx_pinsel.o(i.set_ResistorMode)
+    i.ssp_send                               0x0000285c   Section        0  glcd.o(i.ssp_send)
+    ssp_send                                 0x0000285d   Thumb Code    32  glcd.o(i.ssp_send)
+    i.star                                   0x00002880   Section        0  main.o(i.star)
+    i.star_pass                              0x0000291c   Section        0  main.o(i.star_pass)
+    i.start_Screen                           0x000029dc   Section        0  main.o(i.start_Screen)
+    i.startday                               0x00002ae8   Section        0  main.o(i.startday)
+    i.vote                                   0x00002afc   Section        0  main.o(i.vote)
+    i.vote_screen                            0x00002be4   Section        0  main.o(i.vote_screen)
+    i.winMafia                               0x00002ca4   Section        0  main.o(i.winMafia)
+    i.wr_cmd                                 0x00002ca8   Section        0  glcd.o(i.wr_cmd)
+    wr_cmd                                   0x00002ca9   Thumb Code    36  glcd.o(i.wr_cmd)
+    i.wr_dat                                 0x00002cd0   Section        0  glcd.o(i.wr_dat)
+    wr_dat                                   0x00002cd1   Thumb Code    38  glcd.o(i.wr_dat)
+    i.wr_pixel                               0x00002cfc   Section        0  glcd.o(i.wr_pixel)
+    wr_pixel                                 0x00002cfd   Thumb Code    50  glcd.o(i.wr_pixel)
     .data                                    0x10000000   Section        4  system_lpc17xx.o(.data)
-    .data                                    0x10000004   Section       12  main.o(.data)
-    .data                                    0x10000010   Section     5380  glcd.o(.data)
-    TextColor                                0x10001510   Data           2  glcd.o(.data)
-    BackColor                                0x10001512   Data           2  glcd.o(.data)
-    .bss                                     0x10001514   Section       48  main.o(.bss)
-    .bss                                     0x10001544   Section      228  rand.o(.bss)
-    .bss                                     0x10001628   Section       96  libspace.o(.bss)
-    HEAP                                     0x10001688   Section        0  startup_lpc17xx.o(HEAP)
-    STACK                                    0x10001688   Section      512  startup_lpc17xx.o(STACK)
-    Heap_Mem                                 0x10001688   Data           0  startup_lpc17xx.o(HEAP)
-    Stack_Mem                                0x10001688   Data         512  startup_lpc17xx.o(STACK)
-    __initial_sp                             0x10001888   Data           0  startup_lpc17xx.o(STACK)
+    .data                                    0x10000004   Section       28  main.o(.data)
+    .data                                    0x10000020   Section     5380  glcd.o(.data)
+    TextColor                                0x10001520   Data           2  glcd.o(.data)
+    BackColor                                0x10001522   Data           2  glcd.o(.data)
+    .bss                                     0x10001524   Section       60  main.o(.bss)
+    .bss                                     0x10001560   Section      228  rand.o(.bss)
+    .bss                                     0x10001644   Section       96  libspace.o(.bss)
+    HEAP                                     0x100016a8   Section        0  startup_lpc17xx.o(HEAP)
+    STACK                                    0x100016a8   Section      512  startup_lpc17xx.o(STACK)
+    Heap_Mem                                 0x100016a8   Data           0  startup_lpc17xx.o(HEAP)
+    Stack_Mem                                0x100016a8   Data         512  startup_lpc17xx.o(STACK)
+    __initial_sp                             0x100018a8   Data           0  startup_lpc17xx.o(STACK)
 
     Global Symbols
 
@@ -826,7 +935,6 @@ Image Symbol Table
     SPI_IRQHandler                           0x00000203   Thumb Code     0  startup_lpc17xx.o(.text)
     SSP0_IRQHandler                          0x00000203   Thumb Code     0  startup_lpc17xx.o(.text)
     SSP1_IRQHandler                          0x00000203   Thumb Code     0  startup_lpc17xx.o(.text)
-    TIMER0_IRQHandler                        0x00000203   Thumb Code     0  startup_lpc17xx.o(.text)
     TIMER1_IRQHandler                        0x00000203   Thumb Code     0  startup_lpc17xx.o(.text)
     TIMER2_IRQHandler                        0x00000203   Thumb Code     0  startup_lpc17xx.o(.text)
     TIMER3_IRQHandler                        0x00000203   Thumb Code     0  startup_lpc17xx.o(.text)
@@ -848,95 +956,117 @@ Image Symbol Table
     __I$use$semihosting                      0x000002f9   Thumb Code     0  use_no_semi.o(.text)
     __use_no_semihosting_swi                 0x000002f9   Thumb Code     2  use_no_semi.o(.text)
     __semihosting_library_function           0x000002fb   Thumb Code     0  indicate_semi.o(.text)
-    __aeabi_memcpy4                          0x00000301   Thumb Code     0  rt_memcpy_w.o(.text)
-    __aeabi_memcpy8                          0x00000301   Thumb Code     0  rt_memcpy_w.o(.text)
-    __rt_memcpy_w                            0x00000301   Thumb Code   100  rt_memcpy_w.o(.text)
-    _memcpy_lastbytes_aligned                0x00000349   Thumb Code     0  rt_memcpy_w.o(.text)
-    exit                                     0x00000365   Thumb Code    18  exit.o(.text)
-    __user_libspace                          0x00000379   Thumb Code     8  libspace.o(.text)
-    __user_perproc_libspace                  0x00000379   Thumb Code     0  libspace.o(.text)
-    __user_perthread_libspace                0x00000379   Thumb Code     0  libspace.o(.text)
-    _sys_exit                                0x00000381   Thumb Code     8  sys_exit.o(.text)
-    AF_ConfigPin                             0x0000038d   Thumb Code    30  lpc17xx_pinsel.o(i.AF_ConfigPin)
-    Delay                                    0x000003ab   Thumb Code    12  lpc1768_utility.o(i.Delay)
-    EINT0_IRQHandler                         0x000003b7   Thumb Code    14  main.o(i.EINT0_IRQHandler)
-    EXTI_ClearEXTIFlag                       0x000003c5   Thumb Code    10  lpc17xx_exti.o(i.EXTI_ClearEXTIFlag)
-    EXTI_Config                              0x000003d5   Thumb Code    28  lpc17xx_exti.o(i.EXTI_Config)
-    EXTI_ConfigPin                           0x000003f5   Thumb Code    36  lpc17xx_exti.o(i.EXTI_ConfigPin)
-    EXTI_Init                                0x00000419   Thumb Code    20  lpc17xx_exti.o(i.EXTI_Init)
-    EXTI_SetMode                             0x00000435   Thumb Code    42  lpc17xx_exti.o(i.EXTI_SetMode)
-    EXTI_SetPolarity                         0x00000469   Thumb Code    42  lpc17xx_exti.o(i.EXTI_SetPolarity)
-    EXT_IO_A_CS                              0x0000049d   Thumb Code    34  main.o(i.EXT_IO_A_CS)
-    EXT_IO_B_CS                              0x000004c5   Thumb Code    34  main.o(i.EXT_IO_B_CS)
-    EXT_IO_C_CS                              0x000004ed   Thumb Code    34  main.o(i.EXT_IO_C_CS)
-    EXT_IO_init                              0x00000515   Thumb Code    34  main.o(i.EXT_IO_init)
-    GLCD_clear                               0x000005a5   Thumb Code    48  glcd.o(i.GLCD_clear)
-    GLCD_displayChar                         0x000005d5   Thumb Code    34  glcd.o(i.GLCD_displayChar)
-    GLCD_displayStringLn                     0x000005fd   Thumb Code    60  glcd.o(i.GLCD_displayStringLn)
-    GLCD_drawChar                            0x00000639   Thumb Code    90  glcd.o(i.GLCD_drawChar)
-    GLCD_init                                0x0000069d   Thumb Code   706  glcd.o(i.GLCD_init)
-    GLCD_setBackColor                        0x00000971   Thumb Code     6  glcd.o(i.GLCD_setBackColor)
-    GLCD_setTextColor                        0x0000097d   Thumb Code     6  glcd.o(i.GLCD_setTextColor)
-    Keypad                                   0x00000989   Thumb Code   274  main.o(i.Keypad)
-    Keypad_DIR_Input                         0x00000a9d   Thumb Code    54  main.o(i.Keypad_DIR_Input)
-    Keypad_DIR_Output                        0x00000ad9   Thumb Code    44  main.o(i.Keypad_DIR_Output)
-    Keypad_Input                             0x00000b09   Thumb Code   110  main.o(i.Keypad_Input)
-    Keypad_Output_Row_1                      0x00000b7d   Thumb Code    70  main.o(i.Keypad_Output_Row_1)
-    Keypad_Output_Row_2                      0x00000bc9   Thumb Code    70  main.o(i.Keypad_Output_Row_2)
-    Keypad_Output_Row_3                      0x00000c15   Thumb Code    70  main.o(i.Keypad_Output_Row_3)
-    Keypad_Output_Row_4                      0x00000c61   Thumb Code    70  main.o(i.Keypad_Output_Row_4)
-    PINSEL_ConfigPin                         0x00000cad   Thumb Code    36  lpc17xx_pinsel.o(i.PINSEL_ConfigPin)
-    Start_Page                               0x00000cd1   Thumb Code     4  main.o(i.Start_Page)
-    SystemInit                               0x00000cd5   Thumb Code   302  system_lpc17xx.o(i.SystemInit)
-    WinCitizens                              0x00000e11   Thumb Code     4  main.o(i.WinCitizens)
-    checkUser                                0x00000e15   Thumb Code   182  main.o(i.checkUser)
-    citizen_Win                              0x00000edd   Thumb Code   146  main.o(i.citizen_Win)
-    day_one                                  0x00000fbd   Thumb Code    56  main.o(i.day_one)
-    day_two                                  0x0000103d   Thumb Code   108  main.o(i.day_two)
-    doctor                                   0x00001115   Thumb Code    86  main.o(i.doctor)
-    endDay                                   0x000011e5   Thumb Code    44  main.o(i.endDay)
-    findJob                                  0x0000121d   Thumb Code    16  main.o(i.findJob)
-    findUser                                 0x0000122d   Thumb Code    76  main.o(i.findUser)
-    findpass                                 0x00001281   Thumb Code   188  main.o(i.findpass)
-    fix_No_num                               0x00001345   Thumb Code    62  main.o(i.fix_No_num)
-    fix_Yes_num                              0x00001399   Thumb Code    62  main.o(i.fix_Yes_num)
-    fix_doctor                               0x000013ed   Thumb Code    38  main.o(i.fix_doctor)
-    fix_player_num                           0x00001429   Thumb Code    52  main.o(i.fix_player_num)
-    fix_select_player                        0x00001471   Thumb Code    38  main.o(i.fix_select_player)
-    healUser                                 0x000014ad   Thumb Code    70  main.o(i.healUser)
-    init                                     0x000014f9   Thumb Code    42  main.o(i.init)
-    isFin                                    0x00001529   Thumb Code    56  main.o(i.isFin)
-    keypad                                   0x00001565   Thumb Code   104  main.o(i.keypad)
-    killcitizens                             0x00001675   Thumb Code    68  main.o(i.killcitizens)
-    mafia                                    0x000016bd   Thumb Code    86  main.o(i.mafia)
-    main                                     0x0000178d   Thumb Code   148  main.o(i.main)
-    marfia_Win                               0x00001825   Thumb Code   146  main.o(i.marfia_Win)
-    player_Id                                0x00001905   Thumb Code   104  main.o(i.player_Id)
-    player_Job                               0x000019c9   Thumb Code   252  main.o(i.player_Job)
-    players_Info                             0x00001b6d   Thumb Code   104  main.o(i.players_Info)
-    po_Result                                0x00001cad   Thumb Code   138  main.o(i.po_Result)
-    police                                   0x00001dc1   Thumb Code    86  main.o(i.police)
-    select_Player                            0x00001e91   Thumb Code    64  main.o(i.select_Player)
-    select_pass                              0x00001f31   Thumb Code   190  main.o(i.select_pass)
-    star                                     0x000020d1   Thumb Code    58  main.o(i.star)
-    star_pass                                0x0000216d   Thumb Code    72  main.o(i.star_pass)
-    start_Screen                             0x0000222d   Thumb Code   166  main.o(i.start_Screen)
-    startday                                 0x00002339   Thumb Code    20  main.o(i.startday)
-    vote                                     0x0000234d   Thumb Code   218  main.o(i.vote)
-    vote_screen                              0x00002435   Thumb Code    72  main.o(i.vote_screen)
-    winMafia                                 0x000024f5   Thumb Code     4  main.o(i.winMafia)
-    Region$$Table$$Base                      0x00002584   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000025a4   Number         0  anon$$obj.o(Region$$Table)
+    __aeabi_uldivmod                         0x00000301   Thumb Code     0  lludivv7m.o(.text)
+    _ll_udiv                                 0x00000301   Thumb Code   238  lludivv7m.o(.text)
+    __aeabi_memcpy4                          0x000003ef   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memcpy8                          0x000003ef   Thumb Code     0  rt_memcpy_w.o(.text)
+    __rt_memcpy_w                            0x000003ef   Thumb Code   100  rt_memcpy_w.o(.text)
+    _memcpy_lastbytes_aligned                0x00000437   Thumb Code     0  rt_memcpy_w.o(.text)
+    exit                                     0x00000453   Thumb Code    18  exit.o(.text)
+    __user_libspace                          0x00000465   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x00000465   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x00000465   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x0000046d   Thumb Code     8  sys_exit.o(.text)
+    AF_ConfigPin                             0x00000479   Thumb Code    30  lpc17xx_pinsel.o(i.AF_ConfigPin)
+    CLKPWR_ConfigPPWR                        0x00000499   Thumb Code    46  lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR)
+    CLKPWR_GetPCLK                           0x000004d1   Thumb Code    58  lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK)
+    CLKPWR_GetPCLKSEL                        0x00000511   Thumb Code    34  lpc17xx_clkpwr.o(i.CLKPWR_GetPCLKSEL)
+    CLKPWR_SetPCLKDiv                        0x00000539   Thumb Code    94  lpc17xx_clkpwr.o(i.CLKPWR_SetPCLKDiv)
+    Delay                                    0x000005a1   Thumb Code    12  lpc1768_utility.o(i.Delay)
+    EINT0_IRQHandler                         0x000005ad   Thumb Code    98  main.o(i.EINT0_IRQHandler)
+    EXTI_ClearEXTIFlag                       0x00000619   Thumb Code    10  lpc17xx_exti.o(i.EXTI_ClearEXTIFlag)
+    EXTI_Config                              0x00000629   Thumb Code    28  lpc17xx_exti.o(i.EXTI_Config)
+    EXTI_ConfigPin                           0x00000649   Thumb Code    36  lpc17xx_exti.o(i.EXTI_ConfigPin)
+    EXTI_Init                                0x0000066d   Thumb Code    20  lpc17xx_exti.o(i.EXTI_Init)
+    EXTI_SetMode                             0x00000689   Thumb Code    42  lpc17xx_exti.o(i.EXTI_SetMode)
+    EXTI_SetPolarity                         0x000006bd   Thumb Code    42  lpc17xx_exti.o(i.EXTI_SetPolarity)
+    EXT_IO_A_CS                              0x000006f1   Thumb Code    34  main.o(i.EXT_IO_A_CS)
+    EXT_IO_B_CS                              0x00000719   Thumb Code    34  main.o(i.EXT_IO_B_CS)
+    EXT_IO_C_CS                              0x00000741   Thumb Code    34  main.o(i.EXT_IO_C_CS)
+    EXT_IO_init                              0x00000769   Thumb Code    34  main.o(i.EXT_IO_init)
+    FND_Init                                 0x00000795   Thumb Code    48  lpc1768_fnd.o(i.FND_Init)
+    GLCD_clear                               0x0000082d   Thumb Code    48  glcd.o(i.GLCD_clear)
+    GLCD_displayChar                         0x0000085d   Thumb Code    34  glcd.o(i.GLCD_displayChar)
+    GLCD_displayStringLn                     0x00000885   Thumb Code    60  glcd.o(i.GLCD_displayStringLn)
+    GLCD_drawChar                            0x000008c1   Thumb Code    90  glcd.o(i.GLCD_drawChar)
+    GLCD_init                                0x00000925   Thumb Code   706  glcd.o(i.GLCD_init)
+    GLCD_setBackColor                        0x00000bf9   Thumb Code     6  glcd.o(i.GLCD_setBackColor)
+    GLCD_setTextColor                        0x00000c05   Thumb Code     6  glcd.o(i.GLCD_setTextColor)
+    GPIO_SetDir                              0x00000c49   Thumb Code    40  lpc17xx_gpio.o(i.GPIO_SetDir)
+    Keypad                                   0x00000c71   Thumb Code   274  main.o(i.Keypad)
+    Keypad_DIR_Input                         0x00000d85   Thumb Code    54  main.o(i.Keypad_DIR_Input)
+    Keypad_DIR_Output                        0x00000dc1   Thumb Code    44  main.o(i.Keypad_DIR_Output)
+    Keypad_Input                             0x00000df1   Thumb Code   110  main.o(i.Keypad_Input)
+    Keypad_Output_Row_1                      0x00000e65   Thumb Code    70  main.o(i.Keypad_Output_Row_1)
+    Keypad_Output_Row_2                      0x00000eb1   Thumb Code    70  main.o(i.Keypad_Output_Row_2)
+    Keypad_Output_Row_3                      0x00000efd   Thumb Code    70  main.o(i.Keypad_Output_Row_3)
+    Keypad_Output_Row_4                      0x00000f49   Thumb Code    70  main.o(i.Keypad_Output_Row_4)
+    PINSEL_ConfigPin                         0x00000fab   Thumb Code    36  lpc17xx_pinsel.o(i.PINSEL_ConfigPin)
+    Start_Page                               0x00000fcf   Thumb Code     4  main.o(i.Start_Page)
+    SystemInit                               0x00000fd5   Thumb Code   302  system_lpc17xx.o(i.SystemInit)
+    TIMER0_Config                            0x00001111   Thumb Code    34  main.o(i.TIMER0_Config)
+    TIMER0_IRQHandler                        0x0000113d   Thumb Code   104  main.o(i.TIMER0_IRQHandler)
+    TIM_ClearIntPending                      0x000011b5   Thumb Code    80  lpc17xx_timer.o(i.TIM_ClearIntPending)
+    TIM_Cmd                                  0x00001235   Thumb Code    66  lpc17xx_timer.o(i.TIM_Cmd)
+    TIM_ConfigMatch                          0x000012a9   Thumb Code   246  lpc17xx_timer.o(i.TIM_ConfigMatch)
+    TIM_Init                                 0x000013d1   Thumb Code   272  lpc17xx_timer.o(i.TIM_Init)
+    WinCitizens                              0x00001511   Thumb Code     4  main.o(i.WinCitizens)
+    checkUser                                0x00001515   Thumb Code   182  main.o(i.checkUser)
+    check_failed                             0x000015dd   Thumb Code     4  lpc17xx_libcfg_default.o(i.check_failed)
+    citizen_Win                              0x000015e1   Thumb Code   146  main.o(i.citizen_Win)
+    day_one                                  0x00001735   Thumb Code    56  main.o(i.day_one)
+    day_two                                  0x000017b5   Thumb Code   130  main.o(i.day_two)
+    doctor                                   0x000018a1   Thumb Code    86  main.o(i.doctor)
+    endDay                                   0x00001971   Thumb Code    48  main.o(i.endDay)
+    findJob                                  0x000019ad   Thumb Code    16  main.o(i.findJob)
+    findUser                                 0x000019bd   Thumb Code    82  main.o(i.findUser)
+    findpass                                 0x00001a19   Thumb Code   188  main.o(i.findpass)
+    fix_No_num                               0x00001add   Thumb Code    62  main.o(i.fix_No_num)
+    fix_Yes_num                              0x00001b31   Thumb Code    62  main.o(i.fix_Yes_num)
+    fix_doctor                               0x00001b85   Thumb Code    38  main.o(i.fix_doctor)
+    fix_player_num                           0x00001bc1   Thumb Code    52  main.o(i.fix_player_num)
+    fix_select_player                        0x00001c09   Thumb Code    38  main.o(i.fix_select_player)
+    healUser                                 0x00001c89   Thumb Code    70  main.o(i.healUser)
+    init                                     0x00001cd5   Thumb Code    42  main.o(i.init)
+    isFin                                    0x00001d05   Thumb Code    56  main.o(i.isFin)
+    keypad                                   0x00001d41   Thumb Code   104  main.o(i.keypad)
+    killcitizens                             0x00001e51   Thumb Code    68  main.o(i.killcitizens)
+    mafia                                    0x00001e99   Thumb Code    86  main.o(i.mafia)
+    main                                     0x00001f69   Thumb Code    98  main.o(i.main)
+    marfia_Win                               0x00001fd5   Thumb Code   146  main.o(i.marfia_Win)
+    player_Id                                0x000020b5   Thumb Code   104  main.o(i.player_Id)
+    player_Job                               0x00002179   Thumb Code   252  main.o(i.player_Job)
+    players_Info                             0x0000231d   Thumb Code   104  main.o(i.players_Info)
+    po_Result                                0x0000245d   Thumb Code   138  main.o(i.po_Result)
+    police                                   0x00002571   Thumb Code    86  main.o(i.police)
+    select_Player                            0x00002641   Thumb Code    64  main.o(i.select_Player)
+    select_pass                              0x000026e1   Thumb Code   190  main.o(i.select_pass)
+    star                                     0x00002881   Thumb Code    58  main.o(i.star)
+    star_pass                                0x0000291d   Thumb Code    72  main.o(i.star_pass)
+    start_Screen                             0x000029dd   Thumb Code   166  main.o(i.start_Screen)
+    startday                                 0x00002ae9   Thumb Code    20  main.o(i.startday)
+    vote                                     0x00002afd   Thumb Code   218  main.o(i.vote)
+    vote_screen                              0x00002be5   Thumb Code    72  main.o(i.vote_screen)
+    winMafia                                 0x00002ca5   Thumb Code     4  main.o(i.winMafia)
+    Region$$Table$$Base                      0x00002d34   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00002d54   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x10000000   Data           4  system_lpc17xx.o(.data)
-    day                                      0x10000004   Data           4  main.o(.data)
-    live                                     0x10000008   Data           4  main.o(.data)
-    dead_                                    0x1000000c   Data           4  main.o(.data)
-    ASCII_Table                              0x10000010   Data        5376  glcd.o(.data)
-    userpass                                 0x10001514   Data          24  main.o(.bss)
-    userjob                                  0x1000152c   Data          24  main.o(.bss)
-    _random_number_data                      0x10001544   Data         228  rand.o(.bss)
-    __libspace_start                         0x10001628   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x10001688   Data           0  libspace.o(.bss)
+    time_10m                                 0x10000004   Data           1  main.o(.data)
+    time_1m                                  0x10000005   Data           1  main.o(.data)
+    time_10s                                 0x10000006   Data           1  main.o(.data)
+    time_1s                                  0x10000007   Data           1  main.o(.data)
+    time_tmp                                 0x10000008   Data           1  main.o(.data)
+    TIM_ConfigStruct                         0x1000000c   Data           8  main.o(.data)
+    day                                      0x10000014   Data           4  main.o(.data)
+    live                                     0x10000018   Data           4  main.o(.data)
+    dead_                                    0x1000001c   Data           4  main.o(.data)
+    ASCII_Table                              0x10000020   Data        5376  glcd.o(.data)
+    TIM_MatchConfigStruct                    0x10001524   Data          12  main.o(.bss)
+    userpass                                 0x10001530   Data          24  main.o(.bss)
+    userjob                                  0x10001548   Data          24  main.o(.bss)
+    _random_number_data                      0x10001560   Data         228  rand.o(.bss)
+    __libspace_start                         0x10001644   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x100016a4   Data           0  libspace.o(.bss)
 
 
 
@@ -946,176 +1076,198 @@ Memory Map of the image
 
   Image Entry point : 0x000001e9
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00003ab8, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x00002d34])
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00004278, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x000034e8])
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000025a4, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00002d54, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x00000000   0x000000cc   Data   RO            3    RESET               startup_lpc17xx.o
-    0x000000cc   0x000000cc   0x00000008   Code   RO          945  * !!!main             c_w.l(__main.o)
-    0x000000d4   0x000000d4   0x00000034   Code   RO         1114    !!!scatter          c_w.l(__scatter.o)
-    0x00000108   0x00000108   0x00000064   Code   RO         1112    !!dclz77c           c_w.l(__dclz77c.o)
-    0x0000016c   0x0000016c   0x0000001c   Code   RO         1116    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x00000188   0x00000188   0x00000002   Code   RO         1035    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x0000018a   0x0000018a   0x00000000   Code   RO          953    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x0000018a   0x0000018a   0x00000000   Code   RO          955    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x0000018a   0x0000018a   0x00000000   Code   RO          958    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x0000018a   0x0000018a   0x00000000   Code   RO          960    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x0000018a   0x0000018a   0x00000004   Code   RO          961    .ARM.Collect$$libinit$$0000000D  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          962    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          965    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          967    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          969    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          971    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          973    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          975    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          977    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          979    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          981    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          983    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          985    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          989    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          991    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          993    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000000   Code   RO          995    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x0000018e   0x0000018e   0x00000002   Code   RO          996    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x00000190   0x00000190   0x00000002   Code   RO         1079    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x00000192   0x00000192   0x00000000   Code   RO         1095    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x00000192   0x00000192   0x00000000   Code   RO         1097    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x00000192   0x00000192   0x00000000   Code   RO         1100    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x00000192   0x00000192   0x00000000   Code   RO         1103    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x00000192   0x00000192   0x00000000   Code   RO         1105    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x00000192   0x00000192   0x00000000   Code   RO         1108    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x00000192   0x00000192   0x00000002   Code   RO         1109    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x00000194   0x00000194   0x00000000   Code   RO          947    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x00000194   0x00000194   0x00000000   Code   RO          998    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x00000194   0x00000194   0x00000006   Code   RO         1010    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x0000019a   0x0000019a   0x00000000   Code   RO         1000    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x0000019a   0x0000019a   0x00000004   Code   RO         1001    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x0000019e   0x0000019e   0x00000000   Code   RO         1003    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x0000019e   0x0000019e   0x00000008   Code   RO         1004    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x000001a6   0x000001a6   0x00000002   Code   RO         1041    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x000001a8   0x000001a8   0x00000000   Code   RO         1061    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x000001a8   0x000001a8   0x00000004   Code   RO         1062    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x000001ac   0x000001ac   0x00000006   Code   RO         1063    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x000000cc   0x000000cc   0x00000008   Code   RO         1214  * !!!main             c_w.l(__main.o)
+    0x000000d4   0x000000d4   0x00000034   Code   RO         1383    !!!scatter          c_w.l(__scatter.o)
+    0x00000108   0x00000108   0x00000064   Code   RO         1381    !!dclz77c           c_w.l(__dclz77c.o)
+    0x0000016c   0x0000016c   0x0000001c   Code   RO         1385    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x00000188   0x00000188   0x00000002   Code   RO         1304    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x0000018a   0x0000018a   0x00000000   Code   RO         1222    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x0000018a   0x0000018a   0x00000000   Code   RO         1224    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x0000018a   0x0000018a   0x00000000   Code   RO         1227    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x0000018a   0x0000018a   0x00000000   Code   RO         1229    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x0000018a   0x0000018a   0x00000004   Code   RO         1230    .ARM.Collect$$libinit$$0000000D  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1231    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1234    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1236    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1238    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1240    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1242    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1244    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1246    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1248    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1250    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1252    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1254    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1258    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1260    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1262    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000000   Code   RO         1264    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x0000018e   0x0000018e   0x00000002   Code   RO         1265    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x00000190   0x00000190   0x00000002   Code   RO         1348    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x00000192   0x00000192   0x00000000   Code   RO         1364    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x00000192   0x00000192   0x00000000   Code   RO         1366    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x00000192   0x00000192   0x00000000   Code   RO         1369    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x00000192   0x00000192   0x00000000   Code   RO         1372    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x00000192   0x00000192   0x00000000   Code   RO         1374    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x00000192   0x00000192   0x00000000   Code   RO         1377    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x00000192   0x00000192   0x00000002   Code   RO         1378    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x00000194   0x00000194   0x00000000   Code   RO         1216    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x00000194   0x00000194   0x00000000   Code   RO         1267    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x00000194   0x00000194   0x00000006   Code   RO         1279    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x0000019a   0x0000019a   0x00000000   Code   RO         1269    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x0000019a   0x0000019a   0x00000004   Code   RO         1270    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x0000019e   0x0000019e   0x00000000   Code   RO         1272    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x0000019e   0x0000019e   0x00000008   Code   RO         1273    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x000001a6   0x000001a6   0x00000002   Code   RO         1310    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x000001a8   0x000001a8   0x00000000   Code   RO         1330    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x000001a8   0x000001a8   0x00000004   Code   RO         1331    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x000001ac   0x000001ac   0x00000006   Code   RO         1332    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x000001b2   0x000001b2   0x00000002   PAD
-    0x000001b4   0x000001b4   0x00000034   Code   RO          934    .emb_text           c_w.l(rand.o)
+    0x000001b4   0x000001b4   0x00000034   Code   RO         1203    .emb_text           c_w.l(rand.o)
     0x000001e8   0x000001e8   0x0000003c   Code   RO            5  * .text               startup_lpc17xx.o
-    0x00000224   0x00000224   0x0000003c   Code   RO          935    .text               c_w.l(rand.o)
-    0x00000260   0x00000260   0x00000048   Code   RO          939    .text               c_w.l(strcpy.o)
-    0x000002a8   0x000002a8   0x00000006   Code   RO          943    .text               c_w.l(heapauxi.o)
-    0x000002ae   0x000002ae   0x0000004a   Code   RO         1018    .text               c_w.l(sys_stackheap_outer.o)
-    0x000002f8   0x000002f8   0x00000002   Code   RO         1057    .text               c_w.l(use_no_semi.o)
-    0x000002fa   0x000002fa   0x00000000   Code   RO         1059    .text               c_w.l(indicate_semi.o)
+    0x00000224   0x00000224   0x0000003c   Code   RO         1204    .text               c_w.l(rand.o)
+    0x00000260   0x00000260   0x00000048   Code   RO         1208    .text               c_w.l(strcpy.o)
+    0x000002a8   0x000002a8   0x00000006   Code   RO         1212    .text               c_w.l(heapauxi.o)
+    0x000002ae   0x000002ae   0x0000004a   Code   RO         1287    .text               c_w.l(sys_stackheap_outer.o)
+    0x000002f8   0x000002f8   0x00000002   Code   RO         1326    .text               c_w.l(use_no_semi.o)
+    0x000002fa   0x000002fa   0x00000000   Code   RO         1328    .text               c_w.l(indicate_semi.o)
     0x000002fa   0x000002fa   0x00000002   PAD
     0x000002fc   0x000002fc   0x00000004   Code   RO            4    .ARM.__at_0x02FC    startup_lpc17xx.o
-    0x00000300   0x00000300   0x00000064   Code   RO          941    .text               c_w.l(rt_memcpy_w.o)
-    0x00000364   0x00000364   0x00000012   Code   RO         1020    .text               c_w.l(exit.o)
-    0x00000376   0x00000376   0x00000002   PAD
-    0x00000378   0x00000378   0x00000008   Code   RO         1038    .text               c_w.l(libspace.o)
-    0x00000380   0x00000380   0x0000000c   Code   RO         1055    .text               c_w.l(sys_exit.o)
-    0x0000038c   0x0000038c   0x0000001e   Code   RO          315    i.AF_ConfigPin      lpc17xx_pinsel.o
-    0x000003aa   0x000003aa   0x0000000c   Code   RO          371    i.Delay             lpc1768_utility.o
-    0x000003b6   0x000003b6   0x0000000e   Code   RO          449    i.EINT0_IRQHandler  main.o
-    0x000003c4   0x000003c4   0x00000010   Code   RO           64    i.EXTI_ClearEXTIFlag  lpc17xx_exti.o
-    0x000003d4   0x000003d4   0x00000020   Code   RO           65    i.EXTI_Config       lpc17xx_exti.o
-    0x000003f4   0x000003f4   0x00000024   Code   RO           66    i.EXTI_ConfigPin    lpc17xx_exti.o
-    0x00000418   0x00000418   0x0000001c   Code   RO           68    i.EXTI_Init         lpc17xx_exti.o
-    0x00000434   0x00000434   0x00000034   Code   RO           69    i.EXTI_SetMode      lpc17xx_exti.o
-    0x00000468   0x00000468   0x00000034   Code   RO           70    i.EXTI_SetPolarity  lpc17xx_exti.o
-    0x0000049c   0x0000049c   0x00000028   Code   RO          450    i.EXT_IO_A_CS       main.o
-    0x000004c4   0x000004c4   0x00000028   Code   RO          451    i.EXT_IO_B_CS       main.o
-    0x000004ec   0x000004ec   0x00000028   Code   RO          452    i.EXT_IO_C_CS       main.o
-    0x00000514   0x00000514   0x0000002c   Code   RO          453    i.EXT_IO_init       main.o
-    0x00000540   0x00000540   0x00000032   Code   RO          813    i.GLCD_SetX         glcd.o
-    0x00000572   0x00000572   0x00000032   Code   RO          814    i.GLCD_SetY         glcd.o
-    0x000005a4   0x000005a4   0x00000030   Code   RO          816    i.GLCD_clear        glcd.o
-    0x000005d4   0x000005d4   0x00000028   Code   RO          818    i.GLCD_displayChar  glcd.o
-    0x000005fc   0x000005fc   0x0000003c   Code   RO          819    i.GLCD_displayStringLn  glcd.o
-    0x00000638   0x00000638   0x00000064   Code   RO          820    i.GLCD_drawChar     glcd.o
-    0x0000069c   0x0000069c   0x000002d4   Code   RO          821    i.GLCD_init         glcd.o
-    0x00000970   0x00000970   0x0000000c   Code   RO          823    i.GLCD_setBackColor  glcd.o
-    0x0000097c   0x0000097c   0x0000000c   Code   RO          824    i.GLCD_setTextColor  glcd.o
-    0x00000988   0x00000988   0x00000112   Code   RO          454    i.Keypad            main.o
-    0x00000a9a   0x00000a9a   0x00000002   PAD
-    0x00000a9c   0x00000a9c   0x0000003c   Code   RO          455    i.Keypad_DIR_Input  main.o
-    0x00000ad8   0x00000ad8   0x00000030   Code   RO          456    i.Keypad_DIR_Output  main.o
-    0x00000b08   0x00000b08   0x00000074   Code   RO          457    i.Keypad_Input      main.o
-    0x00000b7c   0x00000b7c   0x0000004c   Code   RO          458    i.Keypad_Output_Row_1  main.o
-    0x00000bc8   0x00000bc8   0x0000004c   Code   RO          459    i.Keypad_Output_Row_2  main.o
-    0x00000c14   0x00000c14   0x0000004c   Code   RO          460    i.Keypad_Output_Row_3  main.o
-    0x00000c60   0x00000c60   0x0000004c   Code   RO          461    i.Keypad_Output_Row_4  main.o
-    0x00000cac   0x00000cac   0x00000024   Code   RO          316    i.PINSEL_ConfigPin  lpc17xx_pinsel.o
-    0x00000cd0   0x00000cd0   0x00000004   Code   RO          462    i.Start_Page        main.o
-    0x00000cd4   0x00000cd4   0x0000013c   Code   RO           16    i.SystemInit        system_lpc17xx.o
-    0x00000e10   0x00000e10   0x00000004   Code   RO          463    i.WinCitizens       main.o
-    0x00000e14   0x00000e14   0x000000c8   Code   RO          464    i.checkUser         main.o
-    0x00000edc   0x00000edc   0x000000e0   Code   RO          465    i.citizen_Win       main.o
-    0x00000fbc   0x00000fbc   0x00000080   Code   RO          466    i.day_one           main.o
-    0x0000103c   0x0000103c   0x000000c8   Code   RO          467    i.day_two           main.o
-    0x00001104   0x00001104   0x0000000e   Code   RO          825    i.delay             glcd.o
-    0x00001112   0x00001112   0x00000002   PAD
-    0x00001114   0x00001114   0x000000d0   Code   RO          468    i.doctor            main.o
-    0x000011e4   0x000011e4   0x00000038   Code   RO          469    i.endDay            main.o
-    0x0000121c   0x0000121c   0x00000010   Code   RO          470    i.findJob           main.o
-    0x0000122c   0x0000122c   0x00000054   Code   RO          471    i.findUser          main.o
-    0x00001280   0x00001280   0x000000c4   Code   RO          472    i.findpass          main.o
-    0x00001344   0x00001344   0x00000054   Code   RO          473    i.fix_No_num        main.o
-    0x00001398   0x00001398   0x00000054   Code   RO          474    i.fix_Yes_num       main.o
-    0x000013ec   0x000013ec   0x0000003c   Code   RO          475    i.fix_doctor        main.o
-    0x00001428   0x00001428   0x00000048   Code   RO          476    i.fix_player_num    main.o
-    0x00001470   0x00001470   0x0000003c   Code   RO          477    i.fix_select_player  main.o
-    0x000014ac   0x000014ac   0x0000004c   Code   RO          478    i.healUser          main.o
-    0x000014f8   0x000014f8   0x00000030   Code   RO          479    i.init              main.o
-    0x00001528   0x00001528   0x0000003c   Code   RO          480    i.isFin             main.o
-    0x00001564   0x00001564   0x00000110   Code   RO          481    i.keypad            main.o
-    0x00001674   0x00001674   0x00000048   Code   RO          482    i.killcitizens      main.o
-    0x000016bc   0x000016bc   0x000000d0   Code   RO          483    i.mafia             main.o
-    0x0000178c   0x0000178c   0x00000098   Code   RO          484    i.main              main.o
-    0x00001824   0x00001824   0x000000e0   Code   RO          485    i.marfia_Win        main.o
-    0x00001904   0x00001904   0x000000c4   Code   RO          486    i.player_Id         main.o
-    0x000019c8   0x000019c8   0x000001a4   Code   RO          487    i.player_Job        main.o
-    0x00001b6c   0x00001b6c   0x00000140   Code   RO          488    i.players_Info      main.o
-    0x00001cac   0x00001cac   0x00000114   Code   RO          489    i.po_Result         main.o
-    0x00001dc0   0x00001dc0   0x000000d0   Code   RO          490    i.police            main.o
-    0x00001e90   0x00001e90   0x000000a0   Code   RO          491    i.select_Player     main.o
-    0x00001f30   0x00001f30   0x000000cc   Code   RO          492    i.select_pass       main.o
-    0x00001ffc   0x00001ffc   0x00000030   Code   RO          319    i.set_OpenDrainMode  lpc17xx_pinsel.o
-    0x0000202c   0x0000202c   0x00000040   Code   RO          320    i.set_PinFunc       lpc17xx_pinsel.o
-    0x0000206c   0x0000206c   0x00000040   Code   RO          321    i.set_ResistorMode  lpc17xx_pinsel.o
-    0x000020ac   0x000020ac   0x00000024   Code   RO          826    i.ssp_send          glcd.o
-    0x000020d0   0x000020d0   0x0000009c   Code   RO          493    i.star              main.o
-    0x0000216c   0x0000216c   0x000000c0   Code   RO          494    i.star_pass         main.o
-    0x0000222c   0x0000222c   0x0000010c   Code   RO          495    i.start_Screen      main.o
-    0x00002338   0x00002338   0x00000014   Code   RO          496    i.startday          main.o
-    0x0000234c   0x0000234c   0x000000e8   Code   RO          498    i.vote              main.o
-    0x00002434   0x00002434   0x000000c0   Code   RO          499    i.vote_screen       main.o
-    0x000024f4   0x000024f4   0x00000004   Code   RO          500    i.winMafia          main.o
-    0x000024f8   0x000024f8   0x00000028   Code   RO          827    i.wr_cmd            glcd.o
-    0x00002520   0x00002520   0x0000002c   Code   RO          828    i.wr_dat            glcd.o
-    0x0000254c   0x0000254c   0x00000038   Code   RO          829    i.wr_pixel          glcd.o
-    0x00002584   0x00002584   0x00000020   Data   RO         1110    Region$$Table       anon$$obj.o
+    0x00000300   0x00000300   0x000000ee   Code   RO         1201    .text               c_w.l(lludivv7m.o)
+    0x000003ee   0x000003ee   0x00000064   Code   RO         1210    .text               c_w.l(rt_memcpy_w.o)
+    0x00000452   0x00000452   0x00000012   Code   RO         1289    .text               c_w.l(exit.o)
+    0x00000464   0x00000464   0x00000008   Code   RO         1307    .text               c_w.l(libspace.o)
+    0x0000046c   0x0000046c   0x0000000c   Code   RO         1324    .text               c_w.l(sys_exit.o)
+    0x00000478   0x00000478   0x0000001e   Code   RO          315    i.AF_ConfigPin      lpc17xx_pinsel.o
+    0x00000496   0x00000496   0x00000002   PAD
+    0x00000498   0x00000498   0x00000038   Code   RO          439    i.CLKPWR_ConfigPPWR  lpc17xx_clkpwr.o
+    0x000004d0   0x000004d0   0x00000040   Code   RO          442    i.CLKPWR_GetPCLK    lpc17xx_clkpwr.o
+    0x00000510   0x00000510   0x00000028   Code   RO          443    i.CLKPWR_GetPCLKSEL  lpc17xx_clkpwr.o
+    0x00000538   0x00000538   0x00000068   Code   RO          445    i.CLKPWR_SetPCLKDiv  lpc17xx_clkpwr.o
+    0x000005a0   0x000005a0   0x0000000c   Code   RO          371    i.Delay             lpc1768_utility.o
+    0x000005ac   0x000005ac   0x0000006c   Code   RO          701    i.EINT0_IRQHandler  main.o
+    0x00000618   0x00000618   0x00000010   Code   RO           64    i.EXTI_ClearEXTIFlag  lpc17xx_exti.o
+    0x00000628   0x00000628   0x00000020   Code   RO           65    i.EXTI_Config       lpc17xx_exti.o
+    0x00000648   0x00000648   0x00000024   Code   RO           66    i.EXTI_ConfigPin    lpc17xx_exti.o
+    0x0000066c   0x0000066c   0x0000001c   Code   RO           68    i.EXTI_Init         lpc17xx_exti.o
+    0x00000688   0x00000688   0x00000034   Code   RO           69    i.EXTI_SetMode      lpc17xx_exti.o
+    0x000006bc   0x000006bc   0x00000034   Code   RO           70    i.EXTI_SetPolarity  lpc17xx_exti.o
+    0x000006f0   0x000006f0   0x00000028   Code   RO          702    i.EXT_IO_A_CS       main.o
+    0x00000718   0x00000718   0x00000028   Code   RO          703    i.EXT_IO_B_CS       main.o
+    0x00000740   0x00000740   0x00000028   Code   RO          704    i.EXT_IO_C_CS       main.o
+    0x00000768   0x00000768   0x0000002c   Code   RO          705    i.EXT_IO_init       main.o
+    0x00000794   0x00000794   0x00000034   Code   RO          633    i.FND_Init          lpc1768_fnd.o
+    0x000007c8   0x000007c8   0x00000032   Code   RO         1082    i.GLCD_SetX         glcd.o
+    0x000007fa   0x000007fa   0x00000032   Code   RO         1083    i.GLCD_SetY         glcd.o
+    0x0000082c   0x0000082c   0x00000030   Code   RO         1085    i.GLCD_clear        glcd.o
+    0x0000085c   0x0000085c   0x00000028   Code   RO         1087    i.GLCD_displayChar  glcd.o
+    0x00000884   0x00000884   0x0000003c   Code   RO         1088    i.GLCD_displayStringLn  glcd.o
+    0x000008c0   0x000008c0   0x00000064   Code   RO         1089    i.GLCD_drawChar     glcd.o
+    0x00000924   0x00000924   0x000002d4   Code   RO         1090    i.GLCD_init         glcd.o
+    0x00000bf8   0x00000bf8   0x0000000c   Code   RO         1092    i.GLCD_setBackColor  glcd.o
+    0x00000c04   0x00000c04   0x0000000c   Code   RO         1093    i.GLCD_setTextColor  glcd.o
+    0x00000c10   0x00000c10   0x00000038   Code   RO          156    i.GPIO_GetPointer   lpc17xx_gpio.o
+    0x00000c48   0x00000c48   0x00000028   Code   RO          159    i.GPIO_SetDir       lpc17xx_gpio.o
+    0x00000c70   0x00000c70   0x00000112   Code   RO          706    i.Keypad            main.o
+    0x00000d82   0x00000d82   0x00000002   PAD
+    0x00000d84   0x00000d84   0x0000003c   Code   RO          707    i.Keypad_DIR_Input  main.o
+    0x00000dc0   0x00000dc0   0x00000030   Code   RO          708    i.Keypad_DIR_Output  main.o
+    0x00000df0   0x00000df0   0x00000074   Code   RO          709    i.Keypad_Input      main.o
+    0x00000e64   0x00000e64   0x0000004c   Code   RO          710    i.Keypad_Output_Row_1  main.o
+    0x00000eb0   0x00000eb0   0x0000004c   Code   RO          711    i.Keypad_Output_Row_2  main.o
+    0x00000efc   0x00000efc   0x0000004c   Code   RO          712    i.Keypad_Output_Row_3  main.o
+    0x00000f48   0x00000f48   0x0000004c   Code   RO          713    i.Keypad_Output_Row_4  main.o
+    0x00000f94   0x00000f94   0x00000016   Code   RO          714    i.NVIC_EnableIRQ    main.o
+    0x00000faa   0x00000faa   0x00000024   Code   RO          316    i.PINSEL_ConfigPin  lpc17xx_pinsel.o
+    0x00000fce   0x00000fce   0x00000004   Code   RO          715    i.Start_Page        main.o
+    0x00000fd2   0x00000fd2   0x00000002   PAD
+    0x00000fd4   0x00000fd4   0x0000013c   Code   RO           16    i.SystemInit        system_lpc17xx.o
+    0x00001110   0x00001110   0x0000002c   Code   RO          716    i.TIMER0_Config     main.o
+    0x0000113c   0x0000113c   0x00000078   Code   RO          717    i.TIMER0_IRQHandler  main.o
+    0x000011b4   0x000011b4   0x00000080   Code   RO          517    i.TIM_ClearIntPending  lpc17xx_timer.o
+    0x00001234   0x00001234   0x00000074   Code   RO          518    i.TIM_Cmd           lpc17xx_timer.o
+    0x000012a8   0x000012a8   0x00000128   Code   RO          520    i.TIM_ConfigMatch   lpc17xx_timer.o
+    0x000013d0   0x000013d0   0x00000140   Code   RO          526    i.TIM_Init          lpc17xx_timer.o
+    0x00001510   0x00001510   0x00000004   Code   RO          718    i.WinCitizens       main.o
+    0x00001514   0x00001514   0x000000c8   Code   RO          719    i.checkUser         main.o
+    0x000015dc   0x000015dc   0x00000004   Code   RO          502    i.check_failed      lpc17xx_libcfg_default.o
+    0x000015e0   0x000015e0   0x000000e0   Code   RO          720    i.citizen_Win       main.o
+    0x000016c0   0x000016c0   0x0000003c   Code   RO          529    i.converPtrToTimeNum  lpc17xx_timer.o
+    0x000016fc   0x000016fc   0x00000038   Code   RO          530    i.converUSecToVal   lpc17xx_timer.o
+    0x00001734   0x00001734   0x00000080   Code   RO          721    i.day_one           main.o
+    0x000017b4   0x000017b4   0x000000dc   Code   RO          722    i.day_two           main.o
+    0x00001890   0x00001890   0x0000000e   Code   RO         1094    i.delay             glcd.o
+    0x0000189e   0x0000189e   0x00000002   PAD
+    0x000018a0   0x000018a0   0x000000d0   Code   RO          723    i.doctor            main.o
+    0x00001970   0x00001970   0x0000003c   Code   RO          724    i.endDay            main.o
+    0x000019ac   0x000019ac   0x00000010   Code   RO          725    i.findJob           main.o
+    0x000019bc   0x000019bc   0x0000005c   Code   RO          726    i.findUser          main.o
+    0x00001a18   0x00001a18   0x000000c4   Code   RO          727    i.findpass          main.o
+    0x00001adc   0x00001adc   0x00000054   Code   RO          728    i.fix_No_num        main.o
+    0x00001b30   0x00001b30   0x00000054   Code   RO          729    i.fix_Yes_num       main.o
+    0x00001b84   0x00001b84   0x0000003c   Code   RO          730    i.fix_doctor        main.o
+    0x00001bc0   0x00001bc0   0x00000048   Code   RO          731    i.fix_player_num    main.o
+    0x00001c08   0x00001c08   0x0000003c   Code   RO          732    i.fix_select_player  main.o
+    0x00001c44   0x00001c44   0x00000042   Code   RO          531    i.getPClock         lpc17xx_timer.o
+    0x00001c86   0x00001c86   0x00000002   PAD
+    0x00001c88   0x00001c88   0x0000004c   Code   RO          733    i.healUser          main.o
+    0x00001cd4   0x00001cd4   0x00000030   Code   RO          734    i.init              main.o
+    0x00001d04   0x00001d04   0x0000003c   Code   RO          735    i.isFin             main.o
+    0x00001d40   0x00001d40   0x00000110   Code   RO          736    i.keypad            main.o
+    0x00001e50   0x00001e50   0x00000048   Code   RO          737    i.killcitizens      main.o
+    0x00001e98   0x00001e98   0x000000d0   Code   RO          738    i.mafia             main.o
+    0x00001f68   0x00001f68   0x0000006c   Code   RO          739    i.main              main.o
+    0x00001fd4   0x00001fd4   0x000000e0   Code   RO          740    i.marfia_Win        main.o
+    0x000020b4   0x000020b4   0x000000c4   Code   RO          741    i.player_Id         main.o
+    0x00002178   0x00002178   0x000001a4   Code   RO          742    i.player_Job        main.o
+    0x0000231c   0x0000231c   0x00000140   Code   RO          743    i.players_Info      main.o
+    0x0000245c   0x0000245c   0x00000114   Code   RO          744    i.po_Result         main.o
+    0x00002570   0x00002570   0x000000d0   Code   RO          745    i.police            main.o
+    0x00002640   0x00002640   0x000000a0   Code   RO          746    i.select_Player     main.o
+    0x000026e0   0x000026e0   0x000000cc   Code   RO          747    i.select_pass       main.o
+    0x000027ac   0x000027ac   0x00000030   Code   RO          319    i.set_OpenDrainMode  lpc17xx_pinsel.o
+    0x000027dc   0x000027dc   0x00000040   Code   RO          320    i.set_PinFunc       lpc17xx_pinsel.o
+    0x0000281c   0x0000281c   0x00000040   Code   RO          321    i.set_ResistorMode  lpc17xx_pinsel.o
+    0x0000285c   0x0000285c   0x00000024   Code   RO         1095    i.ssp_send          glcd.o
+    0x00002880   0x00002880   0x0000009c   Code   RO          749    i.star              main.o
+    0x0000291c   0x0000291c   0x000000c0   Code   RO          750    i.star_pass         main.o
+    0x000029dc   0x000029dc   0x0000010c   Code   RO          751    i.start_Screen      main.o
+    0x00002ae8   0x00002ae8   0x00000014   Code   RO          752    i.startday          main.o
+    0x00002afc   0x00002afc   0x000000e8   Code   RO          754    i.vote              main.o
+    0x00002be4   0x00002be4   0x000000c0   Code   RO          755    i.vote_screen       main.o
+    0x00002ca4   0x00002ca4   0x00000004   Code   RO          756    i.winMafia          main.o
+    0x00002ca8   0x00002ca8   0x00000028   Code   RO         1096    i.wr_cmd            glcd.o
+    0x00002cd0   0x00002cd0   0x0000002c   Code   RO         1097    i.wr_dat            glcd.o
+    0x00002cfc   0x00002cfc   0x00000038   Code   RO         1098    i.wr_pixel          glcd.o
+    0x00002d34   0x00002d34   0x00000020   Data   RO         1379    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x10000000, Load base: 0x000025a4, Size: 0x00001514, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x00000790])
+    Execution Region ER_RW (Exec base: 0x10000000, Load base: 0x00002d54, Size: 0x00001524, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x00000794])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x10000000   COMPRESSED   0x00000004   Data   RW           17    .data               system_lpc17xx.o
-    0x10000004   COMPRESSED   0x0000000c   Data   RW          502    .data               main.o
-    0x10000010   COMPRESSED   0x00001504   Data   RW          830    .data               glcd.o
+    0x10000004   COMPRESSED   0x0000001c   Data   RW          758    .data               main.o
+    0x10000020   COMPRESSED   0x00001504   Data   RW         1099    .data               glcd.o
 
 
-    Execution Region ER_ZI (Exec base: 0x10001514, Load base: 0x00002d34, Size: 0x00000374, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x10001524, Load base: 0x000034e8, Size: 0x00000384, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x10001514        -       0x00000030   Zero   RW          501    .bss                main.o
-    0x10001544        -       0x000000e4   Zero   RW          936    .bss                c_w.l(rand.o)
-    0x10001628        -       0x00000060   Zero   RW         1039    .bss                c_w.l(libspace.o)
-    0x10001688        -       0x00000000   Zero   RW            2    HEAP                startup_lpc17xx.o
-    0x10001688        -       0x00000200   Zero   RW            1    STACK               startup_lpc17xx.o
+    0x10001524        -       0x0000003c   Zero   RW          757    .bss                main.o
+    0x10001560        -       0x000000e4   Zero   RW         1205    .bss                c_w.l(rand.o)
+    0x10001644        -       0x00000060   Zero   RW         1308    .bss                c_w.l(libspace.o)
+    0x100016a4   0x000034e8   0x00000004   PAD
+    0x100016a8        -       0x00000000   Zero   RW            2    HEAP                startup_lpc17xx.o
+    0x100016a8        -       0x00000200   Zero   RW            1    STACK               startup_lpc17xx.o
 
 
 ==============================================================================
@@ -1126,17 +1278,22 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
       1286         66          0       5380          0       8645   glcd.o
+        52          4          0          0          0        471   lpc1768_fnd.o
         12          0          0          0          0        516   lpc1768_utility.o
-       216         38          0          0          0       4462   lpc17xx_exti.o
+       264         32          0          0          0       2417   lpc17xx_clkpwr.o
+       216         38          0          0          0       5730   lpc17xx_exti.o
+        96         10          0          0          0       3054   lpc17xx_gpio.o
+         4          0          0          0          0        967   lpc17xx_libcfg_default.o
        242         14          0          0          0       5422   lpc17xx_pinsel.o
-      6620       2278          0         12         48      68417   main.o
+      1042        216          0          0          0       8641   lpc17xx_timer.o
+      6888       2320          0         28         60      70039   main.o
         64         26        204          0        512       1064   startup_lpc17xx.o
-       316         14          0          4          0       5359   system_lpc17xx.o
+       316         14          0          4          0      22555   system_lpc17xx.o
 
     ----------------------------------------------------------------------
-      8760       2436        236       5396        560      93885   Object Totals
+     10492       2740        236       5412        572     129521   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         4          0          0          0          0          0   (incl. Padding)
+        10          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1157,6 +1314,7 @@ Image component sizes
          2          0          0          0          0          0   libshutdown.o
          2          0          0          0          0          0   libshutdown2.o
          8          4          0          0         96         68   libspace.o
+       238          0          0          0          0        100   lludivv7m.o
        112         18          0          0        228        160   rand.o
        100          0          0          0          0         80   rt_memcpy_w.o
          2          0          0          0          0          0   rtexit.o
@@ -1167,17 +1325,17 @@ Image component sizes
          2          0          0          0          0         68   use_no_semi.o
 
     ----------------------------------------------------------------------
-       640         34          0          0        324        904   Library Totals
-         6          0          0          0          0          0   (incl. Padding)
+       876         34          0          0        328       1004   Library Totals
+         4          0          0          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-       634         34          0          0        324        904   c_w.l
+       872         34          0          0        324       1004   c_w.l
 
     ----------------------------------------------------------------------
-       640         34          0          0        324        904   Library Totals
+       876         34          0          0        328       1004   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -1186,15 +1344,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      9400       2470        236       5396        884      90521   Grand Totals
-      9400       2470        236       1936        884      90521   ELF Image Totals (compressed)
-      9400       2470        236       1936          0          0   ROM Totals
+     11368       2774        236       5412        900     125269   Grand Totals
+     11368       2774        236       1940        900     125269   ELF Image Totals (compressed)
+     11368       2774        236       1940          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 9636 (   9.41kB)
-    Total RW  Size (RW Data + ZI Data)              6280 (   6.13kB)
-    Total ROM Size (Code + RO Data + RW Data)      11572 (  11.30kB)
+    Total RO  Size (Code + RO Data)                11604 (  11.33kB)
+    Total RW  Size (RW Data + ZI Data)              6312 (   6.16kB)
+    Total ROM Size (Code + RO Data + RW Data)      13544 (  13.23kB)
 
 ==============================================================================
 

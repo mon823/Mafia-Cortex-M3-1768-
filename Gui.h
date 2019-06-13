@@ -14,7 +14,7 @@ void start_Screen() {
 		GLCD_setBackColor(Black);
 		GLCD_setTextColor(White);
 		GLCD_displayStringLn(Line0, "*-*-*-*-*-*-*-*-*-*-");
-		GLCD_displayStringLn(Line3, "     M A R F I A    ");
+		GLCD_displayStringLn(Line3, "      M A F I A     ");
 		GLCD_displayStringLn(Line5, " verson 1.          ");
 		GLCD_displayStringLn(Line7, "          Press INT!");
 		GLCD_displayStringLn(Line9, "*-*-*-*-*-*-*-*-*-*-");
@@ -24,7 +24,7 @@ void start_Screen() {
 		GLCD_setTextColor(White);
 		GLCD_displayStringLn(Line0, "*-*-*-*-*-*-*-*-*-*-");
 		GLCD_setTextColor(Red);
-		GLCD_displayStringLn(Line3, "     M A R F I A    ");
+		GLCD_displayStringLn(Line3, "      M A F I A     ");
 		GLCD_setTextColor(White);
 		GLCD_displayStringLn(Line5, " verson 1.          ");
 		GLCD_setTextColor(Red);
@@ -107,7 +107,7 @@ void player_Job(int job, int tmp) {
 	char s2[20];
 	
 	if(job == 0) {
-		strcpy(s2,"     M A R F I A    ");
+		strcpy(s2,"      M A F I A     ");
 	}
 	else if(job == 1){
 		strcpy(s2,"     D O C T O R    ");
@@ -260,7 +260,7 @@ void mafia()
 	GLCD_setTextColor(White);
 	GLCD_displayStringLn(Line0, "*-*-*-*-*-*-*-*-*-*-");
 	GLCD_setTextColor(Red);
-	GLCD_displayStringLn(Line2, "     M A R F I A    ");
+	GLCD_displayStringLn(Line2, "      M A F I A     ");
 	GLCD_setTextColor(White);
 	GLCD_displayStringLn(Line4, "     Kill anyone    ");
 	GLCD_displayStringLn(Line5, "      you want      ");
@@ -342,10 +342,10 @@ void fix_doctor(int tmp){
 	GLCD_displayStringLn(Line7, s1);
 }
 
-void day_two(int tmp) {
+void day_two(int tmp, int tmp1) {
 	
 	char s1[20] = " player [ ] is dead " ;
-	
+	char s2[20] = "       D A Y        " ;
 	if(tmp == 0){
 		strcpy(s1,"                    ");
 	}
@@ -353,11 +353,14 @@ void day_two(int tmp) {
 		s1[9] = tmp+48;
 	}
 	
+	s2[13] = tmp1+48;
+	
+	
 	GLCD_clear(Black);
 	GLCD_setBackColor(Black);
 	GLCD_setTextColor(White);
 	GLCD_displayStringLn(Line0, "*-*-*-*-*-*-*-*-*-*-");
-	GLCD_displayStringLn(Line3, "       D A Y 2      ");
+	GLCD_displayStringLn(Line3, s2 );
 	GLCD_setTextColor(Red);
 	GLCD_displayStringLn(Line6, s1 );  // player [] is dead.
 	GLCD_setTextColor(White);
@@ -373,7 +376,7 @@ void marfia_Win() {
 		GLCD_setTextColor(Red);
 		GLCD_displayStringLn(Line0, "*-*-*-*-*-*-*-*-*-*-");
 		GLCD_setTextColor(Cyan);
-		GLCD_displayStringLn(Line3, "     M A R F I A    "); //
+		GLCD_displayStringLn(Line3, "      M A F I A     "); //
 		GLCD_displayStringLn(Line5, "     ** W I N **    ");
 		GLCD_setTextColor(Red);
 		GLCD_displayStringLn(Line9, "*-*-*-*-*-*-*-*-*-*-");
@@ -383,7 +386,7 @@ void marfia_Win() {
 		GLCD_setTextColor(Red);
 		GLCD_displayStringLn(Line0, "*-*-*-*-*-*-*-*-*-*-");
 		GLCD_setTextColor(White);
-		GLCD_displayStringLn(Line3, "     M A R F I A    "); //
+		GLCD_displayStringLn(Line3, "      M A F I A     "); //
 		GLCD_displayStringLn(Line5, "     ** W I N **    ");
 		GLCD_setTextColor(Red);
 		GLCD_displayStringLn(Line9, "*-*-*-*-*-*-*-*-*-*-");
